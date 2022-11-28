@@ -2,12 +2,20 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
   <div class="form-inputs">
-    <%= f.input :email,
+    <%# <%= f.input :first_name,
                 required: false,
+                autofocus: true,
+                input_html: { autocomplete: "first_name" } %>
+    <%# <%= f.input :last_name,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "first_name" } %>
+    <%= f.input :email,
+                required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password,
-                required: false,
+                required: true,
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>

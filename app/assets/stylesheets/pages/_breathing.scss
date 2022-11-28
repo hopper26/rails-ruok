@@ -1,0 +1,95 @@
+.container-breathe {
+	border:  4px, solid, black;
+	margin: auto, 0;
+}
+
+button {
+  border-radius: 20px;
+  width: 70px;
+  padding: 10px;
+  text-align: center;
+}
+
+#dot {
+  background: #9befe2;
+  border-radius: 50%;
+  height:50px;
+  width:50px;
+  top:50%;
+  left: 50%;
+  animation: growcircle 10s infinite;
+  animation-play-state: paused;
+  position: absolute;
+  transform: scale(0.1);
+  display: none;
+
+}
+
+#dot.play {
+  animation-play-state: running;
+  display: block;
+}
+
+#breathein {
+	color: red;
+	text-align: center;
+	animation:  inhale 10s steps(1,start) infinite;
+  animation-play-state: paused;
+  display: none;
+  font-family:  'Sriracha', cursive;
+  font-size: 64px;
+}
+#breathein.play2 {
+  animation-play-state: running;
+  display: block;
+}
+
+#breatheout {
+	color: black;
+	text-align: center;
+	animation:  exhale 10s steps(1,start) infinite;
+  animation-play-state: paused;
+  display: none;
+  font-family:  'Sriracha', cursive;
+  font-size: 64px;
+}
+#breatheout.play3 {
+  animation-play-state: running;
+  display: block;
+}
+
+@keyframes growcircle {
+  from {
+      transform: scale(0.1);
+    }
+  50% {
+    transform: scale(5);
+    }
+  to {
+      transform: scale(0.1);
+    }
+}
+
+@keyframes inhale {
+	from {
+		visibility: hidden;
+	}
+	50% {
+		visibility: visible;
+	}
+	to {
+		visibility: hidden;
+	}
+}
+
+@keyframes exhale {
+	from {
+		visibility: visible;
+	}
+	50% {
+		visibility: hidden;
+	}
+	to {
+		visibility: visible;
+	}
+}

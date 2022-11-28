@@ -1,1 +1,77 @@
 // Specific CSS for your home-page
+.fa-face-smile {
+	font-size: 170px;
+	background: lightgray;
+	border-radius: 50%;
+	opacity: 0.9;
+	color: green;
+	margin: 8px;
+}
+
+.fa-face-meh {
+	font-size: 170px;
+	background: lightgray;
+	border-radius: 50%;
+	opacity: 0.9;
+	color:  orange;
+}
+
+.fa-face-frown {
+	font-size: 170px;
+	background: lightgray;
+	border-radius: 50%;
+	opacity: 0.9;
+	color:  red;
+}
+
+.container {
+	margin: 0, auto;
+	padding:  20px;
+	border: 2px solid black;
+	width: 800px;
+	background-color: lightgoldenrodyellow;
+}
+.info {
+	text-align: center;
+}
+
+.info h1, h3{
+	font-family: 'Neucha', cursive;
+	font-weight: bolder;
+	font-size: 60px;
+	/*sriracha*/
+}
+.info p {
+	font-family: 'Overpass', sans-serif;
+}
+
+.faces {
+	display:  grid;
+	text-decoration: none;
+	justify-content: space-evenly;
+	justify-items: center;
+	align-content: space-evenly;
+	align-items: center;
+}
+
+// .container @media (min-width: 1200px) {
+//     max-width: 600px;
+// }
+
+// @media (min-width: 992px) .container {
+//     max-width: 500px;
+// }
+
+// @media (min-width: 768px) .container {
+//     max-width: 400px;
+// }
+
+// @media (min-width: 576px) .container {
+//     max-width: 300px;
+// }
+
+.face {
+	cursor: pointer;
+	border:  none;
+	border-radius:  50%;
+}
