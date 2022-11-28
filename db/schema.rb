@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_012621) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_050355) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "emotions", force: :cascade do |t|
-    t.integer "face_happy"
-    t.integer "face_meh"
-    t.integer "face_sad"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "feeling"
     t.index ["user_id"], name: "index_emotions_on_user_id"
   end
 

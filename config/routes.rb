@@ -10,10 +10,9 @@ Rails.application.routes.draw do
   get "/tiles/exercise", to: "pages#exercise"
   get "/tiles/contacts", to: "pages#contacts"
   get "/tiles/chat", to: "pages#chat"
-  get "tiles", to: "pages#quote"
   resources :posts
   resources :goals
-  resources :emotions, only: [:index]
+  resources :emotions, only: [:create, :index]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
