@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def face
+  def faces
   end
 
   def breathing

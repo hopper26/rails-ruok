@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root 'devise/sessions#new'
   end
 
-  get "/face", to: "pages#face", as: :face
+  get "/faces", to: "pages#faces", as: :faces
   get "/tiles", to: "pages#tiles"
   get "/tiles/breathing", to: "pages#breathing"
   get "/tiles/exercise", to: "pages#exercise"
@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get "/tiles/chat", to: "pages#chat"
   resources :posts
   resources :goals
-  resources :emotions, only: [:create, :index]
+  resources :emotions, only: [:create]
+  get "/emotion", to: "emotions#counter"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -10,10 +10,12 @@
       <%= link_to '<i class="fa-regular fa-face-smile"></i>'.html_safe, emotions_path(emotion: {feeling: "happy"}), data: {turbo_method: "POST"} %>
     </div>
     <div class="face">
-      <a type="button" class="btn" target="_self" href="#"><i class="fa-regular fa-face-meh"></i></a>
+      <%= link_to '<i class="fa-regular fa-face-meh"></i>'.html_safe, emotions_path(emotion: {feeling: "meh"}), data: {turbo_method: "POST"} %>
+      <%# <a type="button" class="btn" target="_self" href="#"><i class="fa-regular fa-face-meh"></i></a> %>
     </div>
     <div class="face">
-      <a type="button" class="btn" target="_self" href="#"><i class="fa-regular fa-face-frown"></i></a>
+      <%= link_to '<i class="fa-regular fa-face-frown"></i>'.html_safe, emotions_path(emotion: {feeling: "sad"}), data: {turbo_method: "POST"} %>
+      <%# <a type="button" class="btn" target="_self" href="#"><i class="fa-regular fa-face-frown"></i></a> %>
     </div>
   </div>
 </div>
