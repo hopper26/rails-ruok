@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+<ul>
+  <li><%= "#{post.id}: #{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}" %></li>
+
+  <li><%= link_to "Edit Entry", edit_post_path(post) %></li>
+  <li><%= button_to "Delete Entry", posts_path(post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+</ul>
+<% end %>
+
+<button><%= link_to "New Entry", new_post_path %></button>
