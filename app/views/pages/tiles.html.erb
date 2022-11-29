@@ -1,10 +1,13 @@
 <h1>Main page</h1>
-<ul>
-  <li><%= link_to "Journal", posts_path %></li>
-  <li><%= link_to "Breathing", tiles_breathing_path %></li>
-  <li><%= link_to "Exercise", tiles_exercise_path %></li>
-  <li><%= link_to "Contacts", tiles_contacts_path %></li>
-  <li><%= link_to "Chat", tiles_chat_path %></li>
-  <li><%= link_to "Goals", goals_path %></li>
-  <li>Quote</li>
-</ul>
+<%# https://type.fit/api/quotes %>
+<%# "https://zenquotes.io/api/today" %>
+<div data-controller="quotes" data-quotes-url-value="https://type.fit/api/quotes">
+  <ul>
+    <li><%= link_to "Journal", posts_path %></li>
+    <li><%= link_to "Breathing", tiles_breathing_path %></li>
+    <li><%= link_to "Exercise", tiles_exercise_path %></li>
+    <li><%= link_to "Contacts", tiles_contacts_path %></li>
+    <li><%= link_to "Chat", tiles_chat_path %></li>
+    <li><%= link_to "Goals", goals_path %></li>
+    <div data-quotes-target="quote"></div>
+  </ul>

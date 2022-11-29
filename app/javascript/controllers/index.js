@@ -8,3 +8,5 @@ import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 import BreathingController from "./breathing_controller"
 application.register("breathing", BreathingController)
+import QuotesController from "./quotes_controller"
+application.register("quotes", QuotesController)

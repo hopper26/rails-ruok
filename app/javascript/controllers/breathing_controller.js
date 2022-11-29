@@ -8,11 +8,15 @@ export default class extends Controller {
   }
 
   start_breath() {
-    let count = 0;
     this.breatheTarget.classList.toggle('play');
     this.inhaleTarget.classList.toggle('play2');
     this.exhaleTarget.classList.toggle('play3');
-    // this.stopTarget.textContent = "Stop";
-    // if this.stopTarget.textContent == "Stop"
+    if (this.stopTarget.innerHTML == "Start") {
+      this.stopTarget.innerHTML = "Stop";
+    } else if (this.stopTarget.innerHTML == "Stop") {
+      this.stopTarget.innerHTML = "Start";
+    } else {
+      null
+    }
   }
 }

@@ -2,7 +2,6 @@ class EmotionsController < ApplicationController
   # POST /emotions (The other information will come as params)
   def create
     @emotion = Emotion.new(emotion_params)
-    # puts @emotion.user.where(feeling: "happy").count
     @emotion.user = current_user
     if @emotion.save
       redirect_to tiles_path, status: :see_other
