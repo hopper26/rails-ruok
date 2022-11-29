@@ -1,3 +1,5 @@
+require "open-uri"
+
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
@@ -11,6 +13,9 @@ class PagesController < ApplicationController
   end
 
   def tiles
+    # quote for the zenquotes
+    res = URI.open("https://zenquotes.io/api/today").read
+    @data = JSON.parse(res)
   end
 
   def contacts
@@ -20,11 +25,5 @@ class PagesController < ApplicationController
   end
 
   def chat
-  end
-
-  def quote
-    #api for quote would go in here
-    # res = URI.open("https://zenquotes.io/api/today").read
-    # @test = JSON.parse(res)
   end
 end

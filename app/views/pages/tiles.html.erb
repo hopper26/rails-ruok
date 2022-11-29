@@ -10,5 +10,9 @@
     <li><%= link_to "Chat", tiles_chat_path %></li>
     <li><%= link_to "Goals", goals_path %></li>
     <div data-quotes-target="quote" id="quote"></div>
-    <%# <li><%= link_to "Quote", tiles_quote_path %>
+    <br>
+    <% @data.each do |data| %>
+    <%= "Quote: #{data["q"]}" %>
+    <% end %>
+
   </ul>

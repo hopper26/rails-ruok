@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get "/tiles/exercise", to: "pages#exercise"
   get "/tiles/contacts", to: "pages#contacts"
   get "/tiles/chat", to: "pages#chat"
-  # get "/tiles/quote", to: "pages#quote"
   resources :posts
   resources :goals
   resources :emotions, only: [:create]
