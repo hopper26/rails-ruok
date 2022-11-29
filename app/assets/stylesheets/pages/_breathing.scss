@@ -1,31 +1,41 @@
 // breathing page layout
-.container {
-  background-color: #EEECF1;
-  margin: 0,auto;
-  padding: 20px;
-}
-
-.cards {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  justify-content: space-evenly;
-  justify-items: center;
-  align-content: space-evenly;
-  align-items: center;
-  height: 800px;
-}
-
 .container-breathe {
-	border:  4px, solid, black;
+  background-color: #EEECF1;
+  margin: 0, auto;
+  padding: 20px;
+  height: 700px;
+  border:  4px, solid, blue;
+}
+
+// .cards {
+//   display: grid;
+//   grid-template-rows: 1fr 1fr 1fr 1fr;
+//   grid-gap: 16px;
+//   justify-content: space-evenly;
+//   justify-items: center;
+//   align-content: space-evenly;
+//   align-items: center;
+
+// }
+
+.container {
+  height: 800px;
+  width: 700px;
+  border:  4px, solid, blue;
 	margin: auto, 0;
 }
 
 button {
-  border-radius: 20px;
+  border-radius: 30px;
   width: 70px;
   padding: 10px;
+  font-size: 24px;
+  font-family: 'Neucha', cursive;
   text-align: center;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 80%;
 }
 
 #dot {
@@ -38,7 +48,7 @@ button {
   left: 50%;
   animation: growcircle 10s infinite;
   animation-play-state: paused;
-  // position: absolute;
+  position: absolute;
   transform: scale(0.1);
   display: none;
 
@@ -55,8 +65,13 @@ button {
 	animation:  inhale 10s steps(1,start) infinite;
   animation-play-state: paused;
   display: none;
-
-  font-size: 64px;  font-family:  'Sriracha', cursive;
+  font-size: 64px;
+  font-family:  'Sriracha', cursive;
+  position: absolute;
+  //padding-top: 200px;
+  top: 15%;
+  left: 50%;
+  right: 50%;
 }
 #breathein.play2 {
   animation-play-state: running;
@@ -71,6 +86,12 @@ button {
   display: none;
   font-family:  'Sriracha', cursive;
   font-size: 64px;
+  position: absolute;
+  //padding-top: 200px;
+  top: 15%;
+  left: 50%;
+  right: 50%;
+
 }
 #breatheout.play3 {
   animation-play-state: running;
