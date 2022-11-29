@@ -1,3 +1,21 @@
+// breathing page layout
+.container {
+  background-color: #EEECF1;
+  margin: 0,auto;
+  padding: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+  height: 800px;
+}
+
 .container-breathe {
 	border:  4px, solid, black;
 	margin: auto, 0;
@@ -11,7 +29,8 @@ button {
 }
 
 #dot {
-  background: #9befe2;
+  // background: #9befe2;
+  background: #8Fb1cc;
   border-radius: 50%;
   height:50px;
   width:50px;
@@ -19,7 +38,7 @@ button {
   left: 50%;
   animation: growcircle 10s infinite;
   animation-play-state: paused;
-  position: absolute;
+  // position: absolute;
   transform: scale(0.1);
   display: none;
 
@@ -31,7 +50,7 @@ button {
 }
 
 #breathein {
-	color: red;
+	color: #ADC3D1;
 	text-align: center;
 	animation:  inhale 10s steps(1,start) infinite;
   animation-play-state: paused;
@@ -45,7 +64,7 @@ button {
 }
 
 #breatheout {
-	color: black;
+	color: #ADC3D1;
 	text-align: center;
 	animation:  exhale 10s steps(1,start) infinite;
   animation-play-state: paused;

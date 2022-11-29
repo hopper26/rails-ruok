@@ -23,5 +23,8 @@ class PagesController < ApplicationController
   end
 
   def quote
+    #api for quote would go in here
+    # res = URI.open("https://zenquotes.io/api/today").read
+    # @test = JSON.parse(res)
   end
 end
