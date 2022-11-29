@@ -55,8 +55,8 @@ button {
 	animation:  inhale 10s steps(1,start) infinite;
   animation-play-state: paused;
   display: none;
-  font-family:  'Sriracha', cursive;
-  font-size: 64px;
+
+  font-size: 64px;  font-family:  'Sriracha', cursive;
 }
 #breathein.play2 {
   animation-play-state: running;
