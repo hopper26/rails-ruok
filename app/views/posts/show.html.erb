@@ -1,0 +1,40 @@
+<%= link_to "Entries", posts_path %>
+<br><br><br>
+<%# <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-notepad-tab" data-bs-toggle="tab" data-bs-target="#nav-notepad" type="button" role="tab" aria-controls="nav-notepad" aria-selected="true">Notepad</button>
+    <button class="nav-link" id="nav-scribble-tab" data-bs-toggle="tab" data-bs-target="#nav-scribble" type="button" role="tab" aria-controls="nav-scribble" aria-selected="false">Scribble</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-notepad" role="tabpanel" aria-labelledby="nav-notepad-tab">
+    <p>print something please</p>
+    <h1><%= "Title: #{@post.title}" %>
+    <%# <p><%= @post.content %>
+  <%# </div> %>
+  <%# <div class="tab-pane fade" id="nav-scribble" role="tabpanel" aria-labelledby="nav-scribble-tab"> %>
+    <%# <p>Scribble page</p> %>
+  <%# </div> %>
+<%# </div> %>
+
+
+<div class="container-entry">
+  <div class="tabs">
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+      <label for="tab-1" class="tab-label">Notepad</label>
+      <div class="tab-content">
+        <h1><%= "Title: #{@post.title}" %></h1>
+        <p><%= @post.content %></p>
+      </div>
+    </div>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-2" checked class="tab-switch">
+          <label for="tab-2" class="tab-label">Scribble</label>
+          <div class="tab-content">
+            <p>scribble</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

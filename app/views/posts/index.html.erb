@@ -1,10 +1,28 @@
-<% @posts.each do |post| %>
-<ul>
-  <li><%= "#{post.id}: #{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}" %></li>
+<%= form_with url: posts_path, method: :get, class: "d-flex" do %>
+  <%= date_field_tag :date,
+    params[:date],
+    class: "form-control",
+    placeholder: "Select a date"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
-  <li><%= link_to "Edit Entry", edit_post_path(post) %></li>
-  <li><%= button_to "Delete Entry", posts_path(post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-</ul>
+
+<p><%= params[:date]   %><p>
+<br><br>
+<% if params[:date] %>
+  <% @my_posts.each do |post| %>
+  <ul>
+  <li><%= link_to post.title, post_path(post) %></li>
+    <li><%= "Created: #{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}" %></li>
+
+    <li><% if policy(post).edit? %>
+      <%= link_to "Edit Entry", edit_post_path(post) %>
+    <% end %>
+    </li>
+    <li><%= link_to "Delete Entry", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(post).destroy? %></li>
+  </ul>
+  <% end %>
 <% end %>
 
 <button><%= link_to "New Entry", new_post_path %></button>
