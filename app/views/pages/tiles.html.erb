@@ -1,20 +1,41 @@
-<h1>Main page</h1>
-<%# https://type.fit/api/quotes %>
-<%# "https://zenquotes.io/api/today" %>
-<div data-controller="quotes" data-quotes-url-value="https://type.fit/api/quotes">
-  <ul>
-    <li><%= link_to "Journal", posts_path(date: Time.now.strftime('%Y-%m-%d')) %></li>
-    <li><%= link_to "Breathing", tiles_breathing_path %></li>
-    <li><%= link_to "Exercise", tiles_exercise_path %></li>
-    <li><%= link_to "Contacts", tiles_contacts_path %></li>
-    <li><%= link_to "Chat", tiles_chat_path %></li>
-    <li><%= link_to "Goals", goals_path %></li>
-    <div data-quotes-target="quote" id="quote"></div>
-    <br>
-    <% @data.each do |data| %>
-    <%= "Quote: #{data["q"]}" %>
-    <% end %>
+<div class="container_tiles">
+  <%# https://type.fit/api/quotes %>
+  <%# "https://zenquotes.io/api/today" %>
+  <div data-controller="quotes" data-quotes-url-value="https://type.fit/api/quotes">
+    <div class="cards">
+      <div class="each_card">
+        <%= link_to '<i class="bi bi-journal-richtext tile-icons"></i>'.html_safe, posts_path(date: Time.now.strftime('%Y-%m-%d')) %>
+        <h2 class="tile_title">Journal</h2>
+      </div>
+      <div class="each_card">
+        <%= link_to '<i class="bi bi-peace tile-icons"></i>'.html_safe, tiles_breathing_path %>
+        <h2 class="tile_title"> Breathing</h2>
+      </div>
+      <div class="each_card">
+        <%= link_to '<i class="bi bi-pin-map-fill tile-icons"></i>'.html_safe, tiles_exercise_path %>
+        <h2 class="tile_title">Exercise</h2>
+      </div>
+      <div class="each_card">
+        <%= link_to '<i class="bi bi-telephone-outbound tile-icons"></i>'.html_safe, tiles_contacts_path %>
+        <h2 class="tile_title">Contacts</h2>
+      </div>
+      <div class="each_card">
+        <%= link_to '<i class="fa-regular fa-comments tile-icons"></i>'.html_safe, tiles_chat_path %>
+        <h2 class="tile_title">Chat</h2>
+      </div>
+      <div class="each_card">
+        <%= link_to '<i class="fa-regular fa-rectangle-list tile-icons"></i>'.html_safe, goals_path %>
+        <h2 class="tile_title">Goals</h2>
+      </div>
+      <br>
+      <div class="each_card">
+        <div data-quotes-target="quote" id="quote"></div>
+          <br>
+          <% @data.each do |data| %>
+            <%= "Quote: #{data["q"]}" %>
+          <% end %>
+        </div>
+      </div>
     <br><br><br>
     <%= link_to "Testing Area", test_path %>
-
-  </ul>
+</div>

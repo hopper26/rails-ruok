@@ -7,3 +7,83 @@
   margin: 0, auto;
   padding: 10px;
 }
+
+.container_tiles {
+  margin: 0, auto;
+  padding: 50px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+}
+
+.each_card {
+  border: 2px none lightslategrey;
+  box-shadow: 2px 2px 4px 2px purple;
+  padding: 5px;
+  width: 300px;
+  height: 300px;
+}
+
+.tile-icons {
+  text-align: center;
+  font-size: 150px;
+  text-decoration: none;
+  padding: 30px;
+
+}
+
+.tile_title {
+  font-family: "Sriracha", cursive;
+  text-align: center;
+  padding: 10px;
+}
+
+.each_card .tile-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr fr;
+  }
+}
