@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     authorize @post
     if @post.save
-      redirect_to posts_path, status: :see_other
+      redirect_to "/posts?date=#{params[:post][:date]}", status: :see_other
     else
       render :new, status: :unprocessable_entity, alert: "issue"
     end
@@ -37,7 +37,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.update(post_params)
     authorize @post
-    redirect_to posts_path
+    # redirect_to posts_path
+    redirect_to "/posts?date=#{params[:post][:date]}"
   end
 
   def destroy
