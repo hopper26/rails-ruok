@@ -26,4 +26,7 @@ class PagesController < ApplicationController
 
   def chat
   end
+
+  def test
+  end
 end

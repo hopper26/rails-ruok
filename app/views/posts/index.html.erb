@@ -1,28 +1,28 @@
+<div class="selected_date">
 <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
   <%= date_field_tag :date,
     params[:date],
     class: "form-control",
-    placeholder: "Select a date"
+    placeholder: "Select a date",
+    :value => params["date"]
   %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
+</div>
 
-
-<p><%= params[:date]   %><p>
 <br><br>
 <% if params[:date] %>
   <% @my_posts.each do |post| %>
   <ul>
-  <li><%= link_to post.title, post_path(post) %></li>
-    <li><%= "Created: #{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}" %></li>
+  <li><%= link_to post.title, post_path(post, date: params[:date]) %></li>
+    <p><%= "Date: #{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}" %></p>
 
-    <li><% if policy(post).edit? %>
-      <%= link_to "Edit Entry", edit_post_path(post) %>
+    <% if policy(post).edit? %>
+      <p><%= link_to "Edit Entry", edit_post_path(post, date: params[:date]) %></p>
     <% end %>
-    </li>
-    <li><%= link_to "Delete Entry", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(post).destroy? %></li>
+    <p><%= link_to "Delete Entry", post_path(post, date: params[:date]), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(post).destroy? %></p>
   </ul>
   <% end %>
 <% end %>
 
-<button><%= link_to "New Entry", new_post_path %></button>
+<button><%= link_to "New Entry", new_post_path(date: params[:date]) %></button>

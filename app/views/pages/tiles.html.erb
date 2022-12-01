@@ -3,7 +3,7 @@
 <%# "https://zenquotes.io/api/today" %>
 <div data-controller="quotes" data-quotes-url-value="https://type.fit/api/quotes">
   <ul>
-    <li><%= link_to "Journal", posts_path %></li>
+    <li><%= link_to "Journal", posts_path(date: Time.now.strftime('%Y-%m-%d')) %></li>
     <li><%= link_to "Breathing", tiles_breathing_path %></li>
     <li><%= link_to "Exercise", tiles_exercise_path %></li>
     <li><%= link_to "Contacts", tiles_contacts_path %></li>
@@ -14,5 +14,7 @@
     <% @data.each do |data| %>
     <%= "Quote: #{data["q"]}" %>
     <% end %>
+    <br><br><br>
+    <%= link_to "Testing Area", test_path %>
 
   </ul>

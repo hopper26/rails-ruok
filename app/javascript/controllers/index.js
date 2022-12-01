@@ -10,3 +10,5 @@ import BreathingController from "./breathing_controller"
 application.register("breathing", BreathingController)
 import QuotesController from "./quotes_controller"
 application.register("quotes", QuotesController)
+import ExerciseController from "./exercise_controller"
+application.register("exercise", ExerciseController)

@@ -1,15 +1,36 @@
 
 <h2>Edit Entry</h2>
 
-<%= simple_form_for(@post) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :title %>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :content %>
-  </div>
+<div class="container-entry">
+  <div class="tabs">
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+      <label for="tab-1" class="tab-label">Notepad</label>
+      <div class="tab-content">
+       <%= simple_form_for(@post) do |f| %>
+        <p><%= "Date: #{params[:date]}" %></p>
+        <div class="form-inputs">
+          <%= f.input :title %>
+        </div>
+        <div class="form-inputs">
+          <%= f.input :content %>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Save" %>
+        <div class="form-actions">
+          <%= f.button :submit, "Save" %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+          <label for="tab-2" class="tab-label">Scribble</label>
+          <div class="tab-content">
+            <p><%= "Date: #{params[:date]}" %></p>
+            <p>scribble</p>
+          </div>
+        </div>
+    </div>
   </div>
-<% end %>
+  <p><%= link_to "Back", posts_path(date: params[:date]) %></p>
+</div>

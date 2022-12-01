@@ -1,23 +1,9 @@
 class PostsController < ApplicationController
   def index
-    # @posts = []
-    # p2 = Post.all
-    # puts params[:date]
-    # if params[:date] == "#{p.created_at.year}-#{p.created_at.month}-#{p.created_at.day}"
-    #   Post.where("#{p.created_at.year}-#{p.created_at.month}-#{p.created_at.day}" == params[:date])
-    # p2.each do |p|
-      # puts "#{p.created_at.year}-#{p.created_at.month}-#{p.created_at.day}"
-      # puts p
-
-        # p2 = Post.where("created_at LIKE ?", "#{params[:date]}%")
-        # puts p2
-        # raise
-      # puts p3
-      @my_posts = policy_scope(Post).select {|post| "#{post.created_at.year}-#{post.created_at.month}-#{post.created_at.day}" == params[:date]}
-
-    # "#{p.created_at.year}-#{p.created_at.month}-#{p.created_at.day}" == params[:date].to_s
-    # @posts = Post.all
-
+    @my_posts = policy_scope(Post).select do |post|
+      "#{post.created_at.year}-#{post.created_at.month}-#{post.created_at.day}" == params[:date] ||
+        "#{post.created_at.year}-#{post.created_at.month}-0#{post.created_at.day}" == params[:date]
+    end
   end
 
   def show
