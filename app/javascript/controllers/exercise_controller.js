@@ -14,7 +14,7 @@ export default class extends Controller {
 
   // AJAX
   geocode(event) { // action
-    // event.preventDefault();
+    event.preventDefault();
     const address = this.inputTarget.value;
     console.log('hi')
     fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${this.token}`)
