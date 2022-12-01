@@ -40,10 +40,22 @@ export default class extends Controller {
     mapboxgl.accessToken = this.token;
     const map = new mapboxgl.Map({
       container: 'map', // container ID
-      style: 'mapbox://styles/mapbox/streets-v9', // style URL
+      style: 'mapbox://styles/mapbox/streets-v12', // style URL
       center: [longitude, latitude], // starting position [lng, lat]
-      zoom: 12
+      zoom: 1
     });
+
+    //can use location services
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true,
+        showUserHeading: true
+      })
+    );
+
     new mapboxgl.Marker()
       .setLngLat([longitude, latitude])
       .addTo(map);
