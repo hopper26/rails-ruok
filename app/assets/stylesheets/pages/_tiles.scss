@@ -42,15 +42,15 @@
 }
 
 .each_card:hover {
-  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  box-shadow: 5px 10px 40px 5px rgba(0,0,0,.1);
 }
 
-.each_card:hover::before, div:hover::after {
+.each_card:hover::before, .each_card:hover::after {
   display: block;
   content: '';
   position: absolute;
-  width: 400px;
-  height: 300px;
+  width: 405px;
+  height: 305px;
   background: #8FB1CC;
   border-radius: 75px;
   z-index: -1;
@@ -148,7 +148,7 @@
   padding: 10px;
 }
 
-.each_card .tile-icons {
+.tile-icons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,6 +158,10 @@
   font-size: 150px;
   text-decoration: none;
   padding: 30px;
+}
+a {
+  text-decoration: none !important;
+  color: #759CC9;
 }
 
 // Smallest device

@@ -4,7 +4,7 @@
   <div data-controller="quotes" data-quotes-url-value="https://type.fit/api/quotes">
     <div class="cards">
       <div class="each_card">
-        <%= link_to '<i class="bi bi-journal-richtext tile-icons"></i>'.html_safe, posts_path(date: Time.now.strftime('%Y-%m-%d')) %>
+        <%= link_to '<i class="bi bi-journal-richtext tile-icons"></i>'.html_safe, posts_path(date: Time.now.strftime('%Y-%m-%d'), class: "test") %>
         <h2 class="tile_title">Journal</h2>
       </div>
       <div class="each_card">
