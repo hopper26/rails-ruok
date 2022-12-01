@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["input", "coords"];
 
   connect() {
-    console.log("The geocoder controller is loaded!");
+    // console.log("The geocoder controller is loaded!");
   }
 
   initialize() {
@@ -20,6 +20,7 @@ export default class extends Controller {
     fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${this.token}`)
       .then(response => response.json())
       .then((data) => {
+        console.log(data)
         const longitude = data.features[0].center[0]; // found by looking at what was in the data
         const latitude = data.features[0].center[1];
         this.#addCoords(longitude, latitude);
