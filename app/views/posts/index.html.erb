@@ -11,18 +11,14 @@
 </div>
 
 <br><br>
+<%= link_to '<i class="fa-solid fa-plus"></i>'.html_safe, new_post_path(date: params[:date]) %>
+<br><br>
+
 <% if params[:date] %>
   <% @my_posts.each do |post| %>
   <ul>
-  <li><%= link_to post.title, post_path(post, date: params[:date]) %></li>
+    <li><%= link_to post.title, post_path(post, date: params[:date]) %></li>
     <p><%= "Date: #{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}" %></p>
-
-    <% if policy(post).edit? %>
-      <p><%= link_to "Edit Entry", edit_post_path(post, date: params[:date]) %></p>
-    <% end %>
-    <p><%= link_to "Delete Entry", post_path(post, date: params[:date]), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(post).destroy? %></p>
   </ul>
   <% end %>
 <% end %>
-
-<button><%= link_to "New Entry", new_post_path(date: params[:date]) %></button>
