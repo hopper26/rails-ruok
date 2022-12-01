@@ -7,7 +7,8 @@
             params["address"],
             class: "form-control",
             placeholder: "Type an address",
-            "data-exercise-target": "input"
+            "data-exercise-target": "input",
+            :value => "stewart street, richmond, australia"
             %>
           <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
@@ -17,7 +18,7 @@
       <p class="font-monospace lead text-center fw-bold" data-exercise-target="coords">
         <!-- Display the coordinates here -->
       </p>
-       <div id="map" style="height: 300px; width: 600px">
+       <div id="map">
           <!-- Display the map in this div -->
         </div>
       </div>
