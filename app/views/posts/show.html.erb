@@ -1,4 +1,4 @@
-<%= link_to "Entries", posts_path %>
+<%= link_to "Entries", posts_path(date: params[:date]) %>
 <br><br><br>
 <%# <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -27,6 +27,11 @@
         <p><%= "Created on: #{params[:date]}" %></p>
         <h1><%= "Title: #{@post.title}" %></h1>
         <p><%= @post.content %></p>
+        <% if policy(@post).edit? %>
+          <%= link_to '<i class="fa-regular fa-pen-to-square"></i>'.html_safe, edit_post_path(@post, date: params[:date]) %>
+        <% end %>
+        <%= link_to '<i class="fa-solid fa-trash-can"></i>'.html_safe, post_path(@post, date: params[:date]), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@post).destroy? %>
+  </ul>
       </div>
     </div>
         <div class="tab">

@@ -1,20 +1,17 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6" data-controller="exercise">
+      <%= form_with url: tiles_exercise_path, method: :get, class: "d-flex", data: {action: "submit->exercise#geocode"} do %>
+          <%= text_field_tag :address,
+            params[:address],
+            class: "form-control",
+            placeholder: "Type an address",
+            "data-exercise-target": "input"
+            %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
 
-<%= form_with url: tiles_exercise_path, method: :get, class: "d-flex" do %>
-  <div data-action="submit->exercise#geocode">
-    <%= text_field_tag :address,
-      params[:address],
-      class: "form-control",
-      placeholder: "Type an address"
-      %>
-      <div data-exercise-target="input"></div>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<%= params[:address] %>
+      <%# <%= params[:address] %>
 
       <p class="font-monospace lead text-center fw-bold" data-exercise-target="coords">
         <!-- Display the coordinates here -->
