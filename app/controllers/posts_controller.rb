@@ -21,10 +21,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     authorize @post
+    # @post.notepad = params[:post][:rich_body]
     if @post.save
       redirect_to "/posts?date=#{params[:post][:date]}", status: :see_other
     else
-      render :new, status: :unprocessable_entity, alert: "issue"
+      render :new, status: :unprocessable_entity, notice: "issue"
     end
   end
 
@@ -51,6 +52,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:notepad, :title, :created_at)
+    params.require(:post).permit(:rich_body, :title, :created_at)
   end
 end

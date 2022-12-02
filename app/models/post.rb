@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  # has_rich_text :content
+  has_rich_text :rich_body
 
-  validates :title, :notepad, presence: true
+  validates :title, :rich_body, presence: true
 end

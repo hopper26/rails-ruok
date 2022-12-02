@@ -5,23 +5,7 @@
       <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
       <label for="tab-1" class="tab-label">Notepad</label>
       <div class="tab-content">
-       <%= simple_form_for(@post) do |f| %>
-        <p><%= "Date: #{params[:date]}" %></p>
-        <div class="form-inputs">
-          <%= f.input :title %>
-        </div>
-        <div class="form-inputs">
-          <%= f.input :notepad %>
-        </div>
-        <div class="form-inputs">
-          <%= f.input_field :date, as: :hidden, value: params[:date] %>
-        </div>
-        <div class="form-actions">
-          <button type="submit">
-            <i class="fa fa-floppy-disk"></i>
-          </button>
-        </div>
-      <% end %>
+       <%= render "post", post: @post %>
       </div>
     </div>
         <div class="tab">

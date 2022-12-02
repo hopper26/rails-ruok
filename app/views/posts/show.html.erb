@@ -27,7 +27,7 @@
       <div class="tab-content">
         <p><%= "Created on: #{params[:date]}" %></p>
         <h1><%= "Title: #{@post.title}" %></h1>
-        <p><%= @post.notepad %></p>
+        <p><%= @post.rich_body %></p>
         <% if policy(@post).edit? %>
           <%= link_to '<i class="fa-regular fa-pen-to-square"></i>'.html_safe, edit_post_path(@post, date: params[:date]) %>
         <% end %>
