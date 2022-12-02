@@ -24,12 +24,14 @@
 	color:  red;
 }
 
-.container {
+.container-faces {
+  display: grid;
 	margin: 0, auto;
 	padding:  20px;
-	border: 2px solid black;
-	width: 800px;
-	background-color: lightgoldenrodyellow;
+	// border: 2px solid black;
+	// width: 1200px;
+  align-items: center;
+	// background-color: lightgoldenrodyellow;
 }
 .info {
 	text-align: center;
@@ -54,21 +56,29 @@
 	align-items: center;
 }
 
-// .container @media (min-width: 1200px) {
-//     max-width: 600px;
-// }
+@media (min-width: 1200px) {
+ .container-faces {
+    max-width: 600px;
+ }
+}
 
-// @media (min-width: 992px) .container {
-//     max-width: 500px;
-// }
+@media (min-width: 992px) {
+  .container-faces {
+    max-width: 500px;
+  }
+}
 
-// @media (min-width: 768px) .container {
-//     max-width: 400px;
-// }
+@media (min-width: 768px) {
+  .container-faces {
+    max-width: 400px;
+  }
+}
 
-// @media (min-width: 576px) .container {
-//     max-width: 300px;
-// }
+@media (min-width: 576px) {
+  .container-faces {
+    max-width: 300px;
+  }
+}
 
 .face {
 	cursor: pointer;
