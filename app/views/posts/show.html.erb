@@ -10,7 +10,7 @@
   <div class="tab-pane fade show active" id="nav-notepad" role="tabpanel" aria-labelledby="nav-notepad-tab">
     <p>print something please</p>
     <h1><%= "Title: #{@post.title}" %>
-    <%# <p><%= @post.content %>
+    <%# <p><%= @post.notepad %>
   <%# </div> %>
   <%# <div class="tab-pane fade" id="nav-scribble" role="tabpanel" aria-labelledby="nav-scribble-tab"> %>
     <%# <p>Scribble page</p> %>
@@ -27,7 +27,7 @@
       <div class="tab-content">
         <p><%= "Created on: #{params[:date]}" %></p>
         <h1><%= "Title: #{@post.title}" %></h1>
-        <p><%= @post.content %></p>
+        <p><%= @post.notepad %></p>
         <% if policy(@post).edit? %>
           <%= link_to '<i class="fa-regular fa-pen-to-square"></i>'.html_safe, edit_post_path(@post, date: params[:date]) %>
         <% end %>
