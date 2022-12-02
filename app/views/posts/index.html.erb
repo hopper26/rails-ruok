@@ -1,26 +1,27 @@
-<h1>Journal</h1>
+<div class="container-journal">
+  <h1>Journal</h1>
+  <div class="selected_date">
+    <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
+      <%= date_field_tag :date,
+        params[:date],
+        class: "form-control",
+        placeholder: "Select a date",
+        :value => params["date"]
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
-<div class="selected_date">
-  <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
-    <%= date_field_tag :date,
-      params[:date],
-      class: "form-control",
-      placeholder: "Select a date",
-      :value => params["date"]
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <br><br>
+  <%= link_to '<i class="fa-solid fa-plus add-entry"></i>'.html_safe, new_post_path(date: params[:date]) %>
+  <br><br>
+
+  <% if params[:date] %>
+    <% @my_posts.each do |post| %>
+    <ul>
+      <li><%= link_to post.title, post_path(post, date: params[:date]) %></li>
+      <p><%= "Date: #{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}" %></p>
+    </ul>
+    <% end %>
   <% end %>
 </div>
-
-<br><br>
-<%= link_to '<i class="fa-solid fa-plus"></i>'.html_safe, new_post_path(date: params[:date]) %>
-<br><br>
-
-<% if params[:date] %>
-  <% @my_posts.each do |post| %>
-  <ul>
-    <li><%= link_to post.title, post_path(post, date: params[:date]) %></li>
-    <p><%= "Date: #{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}" %></p>
-  </ul>
-  <% end %>
-<% end %>

@@ -35,17 +35,17 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
     authorize @post
+    @post.update(post_params)
     # redirect_to posts_path
     redirect_to "/posts?date=#{params[:post][:date]}"
   end
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
     authorize @post
-    redirect_to posts_path, notice: "Entry deleted"
+    @post.destroy
+    redirect_to posts_path(date: params[:date]), notice: "Entry deleted", status: :see_other
   end
 
   private

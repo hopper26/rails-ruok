@@ -1,8 +1,20 @@
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block; /* For Firefox */
+}
+
 .textarea {
+  height: 300px;
+  width: 500px;
   display: block;
-  width: 100%;
   overflow: hidden;
   resize: both;
-  min-height: 40px;
+  min-height: 100px;
   line-height: 20px;
+}
+
+.container-entry h2 {
+  text-align: center;
+  padding-bottom: 20px;
 }

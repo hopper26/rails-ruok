@@ -42,7 +42,7 @@ export default class extends Controller {
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/streets-v12', // style URL
       center: [longitude, latitude], // starting position [lng, lat]
-      zoom: 1
+      zoom: 5
     });
 
     //can use location services
