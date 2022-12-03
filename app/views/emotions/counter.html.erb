@@ -6,3 +6,6 @@
   <li>Meh Count: <%= @emotion_m %></li>
   <li>Sad Count: <%= @emotion_s %></li>
 </ul>
+
+<% data = [["happy", @emotion_h], ["meh", @emotion_m], ["sad", @emotion_s]] %>
+<%= pie_chart data, library: { pieSliceText: 'value' } %>

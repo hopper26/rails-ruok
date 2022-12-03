@@ -14,9 +14,9 @@ class EmotionsController < ApplicationController
   # Face tracker counter for each face
   def counter
     authorize Emotion
-    @emotion_h = current_user.emotions.where(feeling: "happy").count
-    @emotion_m = current_user.emotions.where(feeling: "meh").count
-    @emotion_s = current_user.emotions.where(feeling: "sad").count
+    @emotion_h = current_user.emotions.this_month.where(feeling: "happy").count
+    @emotion_m = current_user.emotions.this_month.where(feeling: "meh").count
+    @emotion_s = current_user.emotions.this_month.where(feeling: "sad").count
   end
 
   private

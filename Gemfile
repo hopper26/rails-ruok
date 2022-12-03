@@ -49,7 +49,8 @@ gem "sassc-rails"
 gem "pundit"
 # gem 'rack-cors', :require => 'rack/cors'
 
-#action text
+gem "chartkick"
+gem "groupdate"
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
