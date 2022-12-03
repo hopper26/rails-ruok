@@ -1,6 +1,7 @@
 
   let points = new Array();
   colorInput = document.getElementById("color");
+  lineInput = document.getElementById("line-width");
   let painting = false;
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
@@ -35,7 +36,7 @@ function draw(event) {
   const mouseY = event.clientY - canvas.getBoundingClientRect().top;
   ctx.lineTo(mouseX, mouseY);
   ctx.stroke();
-  ctx.lineWidth = 5;
+  ctx.lineWidth = lineInput.value;
   ctx.strokeStyle = colorInput.value;
   ctx.lineJoin = ctx.lineCap = 'round'
   points[points.length] = [mouseX, mouseY];
