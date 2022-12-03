@@ -18,6 +18,8 @@ function startPosition(event) {
   const mouseX = event.clientX - canvas.getBoundingClientRect().left;
   const mouseY = event.clientY - canvas.getBoundingClientRect().top;
   painting = true;
+  ctx.lineWidth = lineInput.value;
+  ctx.strokeStyle = colorInput.value;
   ctx.beginPath();
   ctx.moveTo(mouseX, mouseY);
   points[points.length] = [mouseX, mouseY];
