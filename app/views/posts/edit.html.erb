@@ -9,17 +9,20 @@
       </div>
     </div>
       <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch" onClick="lets_draw()">
         <label for="tab-2" class="tab-label">Scribble</label>
         <div class="tab-content">
           <div id = "wrapper">
             <p><%= "Date: #{params[:date]}" %></p>
             <canvas id="canvas">Canvas not Supported</canvas>
             <div id="buttons">
-              <input type="color" id="color" value="#000000">
+              <input type="color" id="color" value="#ff0000">
+              <%# <input type="number" id="line-width" min="1" max="30"> %>
+              <input type="range" id="line-width" name="line-width" min="1" max="30">
             </div>
-            <%= javascript_include_tag "scribble.js" %>
-            <%# added javascript folder in assets, added the file scribble.js, in assets/config/manifest //= link scribble.js %>
+            <input type="button" id="save" value="Save">
+            <input type="button" id="load" value="Load">
+            <input type="button" id="clear" value="Clear">
           </div>
         </div>
       </div>
