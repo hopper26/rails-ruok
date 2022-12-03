@@ -1,8 +1,12 @@
 #canvas {
   border: 15px ridge grey;
-  margin: 30px auto; cursor:crosshair;
+  margin: -10px auto;
+  cursor: url('paint.png'), auto;
   background: white;
   border-radius: 20px;
+  position: relative;
+  left: 0;
+  top: 0;
 }
 
 #wrapper {
@@ -12,6 +16,6 @@
 }
 
 #buttons {
-  border: 5px solid yellow;
+  // border: 5px solid blue;
   width: 50px;
 }

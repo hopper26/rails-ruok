@@ -22,7 +22,7 @@
   <h2>Entry</h2>
   <div class="tabs">
     <div class="tab">
-      <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+      <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch" onClick="window.location.reload()">
       <label for="tab-1" class="tab-label">Notepad</label>
       <div class="tab-content">
         <p><%= "Created on: #{params[:date]}" %></p>
@@ -39,8 +39,15 @@
           <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
           <label for="tab-2" class="tab-label">Scribble</label>
           <div class="tab-content">
-            <p><%= "Created on: #{params[:date]}" %></p>
-            <p>scribble</p>
+            <div id = "wrapper" >
+              <p><%= "Date: #{params[:date]}" %></p>
+              <canvas id="canvas">Canvas not Supported</canvas>
+              <div id="buttons">
+                <input type="color" id="color" value="#000000">
+              </div>
+              <%= javascript_include_tag "scribble.js" %>
+              <%# added javascript folder in assets, added the file scribble.js, in assets/config/manifest //= link scribble.js %>
+            </div>
           </div>
         </div>
     </div>

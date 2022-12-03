@@ -8,14 +8,21 @@
        <%= render "post", post: @post %>
       </div>
     </div>
-        <div class="tab">
-          <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-          <label for="tab-2" class="tab-label">Scribble</label>
-          <div class="tab-content">
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+        <label for="tab-2" class="tab-label">Scribble</label>
+        <div class="tab-content">
+          <div id = "wrapper">
             <p><%= "Date: #{params[:date]}" %></p>
-            <p>scribble</p>
+            <canvas id="canvas">Canvas not Supported</canvas>
+            <div id="buttons">
+              <input type="color" id="color" value="#000000">
+            </div>
+            <%= javascript_include_tag "scribble.js" %>
+            <%# added javascript folder in assets, added the file scribble.js, in assets/config/manifest //= link scribble.js %>
           </div>
         </div>
+      </div>
     </div>
   </div>
   <p><%= link_to "Back", posts_path(date: params[:date]) %></p>
