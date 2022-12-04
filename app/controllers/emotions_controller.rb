@@ -14,9 +14,15 @@ class EmotionsController < ApplicationController
   # Face tracker counter for each face
   def counter
     authorize Emotion
-    @emotion_h = current_user.emotions.this_month.where(feeling: "happy").count
-    @emotion_m = current_user.emotions.this_month.where(feeling: "meh").count
-    @emotion_s = current_user.emotions.this_month.where(feeling: "sad").count
+    @emotion_h = (policy_scope(Emotion).select do |emotion|
+      emotion.created_at.month.to_s == "11" && emotion.feeling == "happy"
+    end).count
+    @emotion_m = (policy_scope(Emotion).select do |emotion|
+      emotion.created_at.month.to_s == "11" && emotion.feeling == "meh"
+    end).count
+    @emotion_s = (policy_scope(Emotion).select do |emotion|
+      emotion.created_at.month.to_s == "11" && emotion.feeling == "sad"
+    end).count
   end
 
   private
