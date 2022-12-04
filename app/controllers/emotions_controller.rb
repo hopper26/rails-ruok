@@ -15,13 +15,13 @@ class EmotionsController < ApplicationController
   def counter
     authorize Emotion
     @emotion_h = (policy_scope(Emotion).select do |emotion|
-      emotion.created_at.month.to_s == "11" && emotion.feeling == "happy"
+      emotion.created_at.month.to_s == "12" && emotion.feeling == "happy"
     end).count
     @emotion_m = (policy_scope(Emotion).select do |emotion|
-      emotion.created_at.month.to_s == "11" && emotion.feeling == "meh"
+      emotion.created_at.month.to_s == "12" && emotion.feeling == "meh"
     end).count
     @emotion_s = (policy_scope(Emotion).select do |emotion|
-      emotion.created_at.month.to_s == "11" && emotion.feeling == "sad"
+      emotion.created_at.month.to_s == "12" && emotion.feeling == "sad"
     end).count
   end
 
