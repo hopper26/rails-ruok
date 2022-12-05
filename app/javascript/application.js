@@ -5,3 +5,10 @@ import "bootstrap"
 import "chartkick/chart.js"
 import "trix"
 import "@rails/actiontext"
+import { initScribble } from "./custom/scribble"
+
+document.addEventListener('turbo:load', (e) => {
+  if (document.getElementById('canvas')) {
+    initScribble()
+  }
+})

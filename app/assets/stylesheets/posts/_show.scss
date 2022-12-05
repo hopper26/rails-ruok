@@ -73,19 +73,19 @@
   color: #2c3e50;
   border-bottom: 0.25rem solid #bdc3c7;
   opacity: 0;
-  transition: all 0.35s;
+  // transition: all 0.35s;
 }
 .tab-switch:checked + .tab-label {
   background: #1abc9c;
   color: #2c3e50;
   border-bottom: 0;
   border-right: 0.125rem solid #1abc9c;
-  transition: all 0.35s;
+  // transition: all 0.35s;
   z-index: 1;
   top: -0.0625rem;
 }
 .tab-switch:checked + label + .tab-content {
   z-index: 2;
   opacity: 1;
-  transition: all 0.35s;
+  // transition: all 0.35s;
 }
