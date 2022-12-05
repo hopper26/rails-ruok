@@ -20,4 +20,4 @@
 
 
 <% data = [["happy", @emotion_h], ["meh", @emotion_m], ["sad", @emotion_s]] %>
-<%= pie_chart data, library: { pieSliceText: 'value' } %>
+<%= pie_chart data, colors:['green', 'orange', 'red'], library: { pieSliceText: 'value' } %>
