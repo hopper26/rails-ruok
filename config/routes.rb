@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :emotions, only: [:create]
   get "/emotion", to: "emotions#counter"
   get "/test", to: "pages#test"
+  post "goals/:id/toggle", to: "goals#toggle"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

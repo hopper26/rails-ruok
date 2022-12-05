@@ -16,5 +16,5 @@ application.register("hello", HelloController)
 import QuotesController from "./quotes_controller"
 application.register("quotes", QuotesController)
 
-// import ScribbleController from "./scribble_controller"
-// application.register("scribble", ScribbleController)
+import GoalsController from "./goals_controller"
+application.register("goals", GoalsController)

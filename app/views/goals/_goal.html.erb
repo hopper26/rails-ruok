@@ -1,0 +1,14 @@
+<%= simple_form_for(goal) do |f| %>
+  <%= f.check_box :completed,
+                  data: {
+                    id: goal.id,
+                    action: "goals#toggle",
+                  } %>
+  <%= goal.section %>
+  <%= goal.content %>
+
+  <% if policy(goal).edit? %>
+    <%= link_to "Edit", edit_goal_path(goal, section: params[:section]) %>
+  <% end %>
+  <%= link_to "Delete", goal_path(goal), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(goal).destroy? %>
+<% end %>

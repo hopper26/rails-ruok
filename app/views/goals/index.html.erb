@@ -1,1 +1,17 @@
-<h1>Goals</h1>
+<div class="container-goals">
+  <h1>Goals</h1>
+
+  <% if notice.present? %>
+    <%= notice %>
+  <% end %>
+
+  <div class="input-goal">
+    <%= render "form", goal: @goal %>
+  </div>
+
+  <div class="goal-listed" data-controller="goals">
+    <%# <% if @goal.section == "self care" %>
+      <%= render @goals %>
+      <%# <% end %>
+  </div>
+</div>
