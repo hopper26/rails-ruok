@@ -1,5 +1,4 @@
 
-  //document.getElementById('tab_2').onclick = function ()
   function initScribble() {
     let points = new Array();
     const colorInput = document.getElementById("color");
@@ -12,6 +11,7 @@
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", finishedPosition);
     canvas.addEventListener("mousemove", draw);
+    let imageURL;
 
     function startPosition(event) {
       const mouseX = event.clientX - canvas.getBoundingClientRect().left;
@@ -22,7 +22,7 @@
       ctx.beginPath();
       ctx.moveTo(mouseX, mouseY);
       points[points.length] = [mouseX, mouseY];
-      // draw(event);
+
     }
 
     function finishedPosition(event) {
@@ -56,14 +56,8 @@
 
   //loads it back
   document.getElementById('load').onclick = function () {
-    // var win = window.open();
-    // if(navigator.userAgent.indexOf("Chrome") == -1 ) {
-    //   win.location = imageURL;
-    // } else{
-    //   canvas.write('<iframe src="' + imageURL + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>')
-    // }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    myImage = new Image();
+    const myImage = new Image();
     myImage.src = imageURL;
     ctx.drawImage(myImage, 0, 0);
   }
