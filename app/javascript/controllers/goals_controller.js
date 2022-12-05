@@ -25,5 +25,6 @@ export default class extends Controller {
     .then(data => {
        alert(data.message)
      })
+     location.reload();
   }
 }

@@ -1,5 +1,5 @@
 <%= form_with model: goal do |f| %>
-  <%= f.select :section, options_for_select(["self care", "accomplishments", "enjoyment", "activities"]), onchange: "$('#submit-button-id').click();", include_blank: "Category", class: "form-control" %>
-  <%= f.text_field :content, placeholder: "New Task", class: "form-control"  %>
+  <%= f.select :section, options_for_select(["Self Care", "Accomplishments", "Enjoyment", "Activities"]), onchange: "$('#submit-button-id').click();", include_blank: "Category", class: "form-control" %>
+  <%= f.text_field :content, placeholder: "New Task", class: "form-control text-line"  %>
   <%= f.submit "Add", id:"submit-button-id" %>
 <% end %>

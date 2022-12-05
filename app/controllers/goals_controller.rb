@@ -1,7 +1,22 @@
 class GoalsController < ApplicationController
 
   def index
-    @goals = policy_scope(Goal)
+    @goals1 = policy_scope(Goal).select do |goal|
+      goal.section == "Self Care"
+    end
+
+    @goals2 = policy_scope(Goal).select do |goal|
+      goal.section == "Accomplishments"
+    end
+
+    @goals3 = policy_scope(Goal).select do |goal|
+      goal.section == "Activities"
+    end
+
+    @goals4 = policy_scope(Goal).select do |goal|
+      goal.section == "Enjoyment"
+    end
+
     @goal = Goal.new
   end
 

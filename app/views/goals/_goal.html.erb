@@ -2,10 +2,14 @@
   <%= f.check_box :completed,
                   data: {
                     id: goal.id,
-                    action: "goals#toggle",
+                    action: "goals#toggle"
                   } %>
   <%= goal.section %>
-  <%= goal.content %>
+  <% if goal.completed == true %>
+    <span class="strikethrough"><%= goal.content%></span>
+  <% else %>
+    <%= goal.content %>
+  <% end %>
 
   <% if policy(goal).edit? %>
     <%= link_to "Edit", edit_goal_path(goal, section: params[:section]) %>
