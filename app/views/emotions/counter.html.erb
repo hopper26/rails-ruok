@@ -1,11 +1,23 @@
 <h1>Face Tracker</h1>
 <%# <%= current_user.emotions.feeling("happy").count %>
 <%# <%= @emotion.feeling %>
+
+<% option_month =  [['January',1], ['February',2], ['March',3], ['April',4], ['May',5], ['June',6], ['July',7], ['August',8], ['September',9], ['October',10], ['November',11], ['December',12]]%>
+<%= form_tag({controller: 'emotions', action: 'counter'}, method: 'get') do %>
+  <%= select_tag(:month, options_for_select(option_month, params[:month]), id: "different_option_value_html", onchange: "this.form.submit()", include_blank: "Month: ") %>
+  <%= number_field_tag(:year, params[:year], min: 1900, max: 2099, step: 1, onchange: "this.form.submit()", placeholder: "Year: ") %>
+<% end %>
+<br>
+
 <ul>
+<br>
+  <%= "Month - #{Date::MONTHNAMES[params[:month].to_i]}" %>
   <li>Happy Count: <%= @emotion_h %></li>
   <li>Meh Count: <%= @emotion_m %></li>
   <li>Sad Count: <%= @emotion_s %></li>
 </ul>
+
+
 
 <% data = [["happy", @emotion_h], ["meh", @emotion_m], ["sad", @emotion_s]] %>
 <%= pie_chart data, library: { pieSliceText: 'value' } %>

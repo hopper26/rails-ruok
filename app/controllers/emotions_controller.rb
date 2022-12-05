@@ -14,15 +14,31 @@ class EmotionsController < ApplicationController
   # Face tracker counter for each face
   def counter
     authorize Emotion
-    @emotion_h = (policy_scope(Emotion).select do |emotion|
-      emotion.created_at.month.to_s == "12" && emotion.feeling == "happy"
-    end).count
-    @emotion_m = (policy_scope(Emotion).select do |emotion|
-      emotion.created_at.month.to_s == "12" && emotion.feeling == "meh"
-    end).count
-    @emotion_s = (policy_scope(Emotion).select do |emotion|
-      emotion.created_at.month.to_s == "12" && emotion.feeling == "sad"
-    end).count
+
+    if params[:month] == ""
+      @emotion_h = (policy_scope(Emotion).select do |emotion|
+        emotion.created_at.year.to_s == params[:year] && emotion.feeling == "happy"
+      end).count
+      @emotion_m = (policy_scope(Emotion).select do |emotion|
+        emotion.created_at.year.to_s == params[:year] && emotion.feeling == "meh"
+      end).count
+      @emotion_s = (policy_scope(Emotion).select do |emotion|
+        emotion.created_at.year.to_s == params[:year] && emotion.feeling == "sad"
+      end).count
+    else
+      @emotion_h = (policy_scope(Emotion).select do |emotion|
+        emotion.created_at.month.to_s == params[:month] && emotion.created_at.year.to_s == params[:year] &&
+        emotion.feeling == "happy"
+      end).count
+      @emotion_m = (policy_scope(Emotion).select do |emotion|
+        emotion.created_at.month.to_s == params[:month] && emotion.created_at.year.to_s == params[:year] &&
+        emotion.feeling == "meh"
+      end).count
+      @emotion_s = (policy_scope(Emotion).select do |emotion|
+        emotion.created_at.month.to_s == params[:month] && emotion.created_at.year.to_s == params[:year] &&
+        emotion.feeling == "sad"
+      end).count
+    end
   end
 
   private
