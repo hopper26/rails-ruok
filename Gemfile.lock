@@ -297,6 +297,7 @@ DEPENDENCIES
   puma (~> 5.0)
   pundit
   rails (~> 7.0.4)
+  ruby-vips
   sassc-rails
   selenium-webdriver
   simple_form!
