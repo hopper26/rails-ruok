@@ -1,22 +1,10 @@
 class GoalsController < ApplicationController
 
   def index
-    @goals1 = policy_scope(Goal).select do |goal|
-      goal.section == "Self Care"
-    end
-
-    @goals2 = policy_scope(Goal).select do |goal|
-      goal.section == "Accomplishments"
-    end
-
-    @goals3 = policy_scope(Goal).select do |goal|
-      goal.section == "Activities"
-    end
-
-    @goals4 = policy_scope(Goal).select do |goal|
-      goal.section == "Enjoyment"
-    end
-
+    @goals1 = policy_scope(Goal).select { |goal| goal.section == "Self Care" }
+    @goals2 = policy_scope(Goal).select { |goal| goal.section == "Accomplishments" }
+    @goals3 = policy_scope(Goal).select { |goal| goal.section == "Activities" }
+    @goals4 = policy_scope(Goal).select { |goal| goal.section == "Enjoyment" }
     @goal = Goal.new
   end
 
@@ -57,8 +45,9 @@ class GoalsController < ApplicationController
 
   def toggle
     @goal = Goal.find(params[:id])
+    authorize @goal
     @goal.update(completed: params[:completed])
-    render json: { message: "Success" }
+    # render json: { message: "Success" }
   end
 
   private
