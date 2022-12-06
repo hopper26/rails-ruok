@@ -43,7 +43,7 @@ class GoalsController < ApplicationController
     redirect_to goals_path, notice: "Entry deleted", status: :see_other
   end
 
-  def toggle
+  def goaltoggle
     @goal = Goal.find(params[:id])
     authorize @goal
     @goal.update(completed: params[:completed])

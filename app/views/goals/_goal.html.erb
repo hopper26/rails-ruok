@@ -2,11 +2,11 @@
   <%= f.check_box :completed,
                   data: {
                     id: goal.id,
-                    action: "goals#toggle"
+                    action: "goals#goaltoggle"
                   } %>
   <%= goal.section %>
   <% if goal.completed == true %>
-    <span class="strikethrough-line"><%= goal.content%></span>
+    <span class="strikethrough"><%= goal.content%></span>
   <% else %>
     <%= goal.content %>
   <% end %>

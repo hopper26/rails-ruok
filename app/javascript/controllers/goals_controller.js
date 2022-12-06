@@ -5,12 +5,12 @@ export default class extends Controller {
     console.log(this.element);
   }
 
-  toggle(event) {
+  goaltoggle(event) {
     const id = event.target.dataset.id
     const csrfToken = document.querySelector("[name='csrf-token'").content
+    console.log('hi');
 
-
-    fetch(`/goals/${id}/toggle`, {
+    fetch(`/goals/${id}/goaltoggle`, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
