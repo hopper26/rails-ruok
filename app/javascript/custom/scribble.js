@@ -77,7 +77,7 @@
       ctx.drawImage(myImage,0,0);
     }
     myImage.src = imageURL;
-    // ctx.drawImage(myImage, 0, 0);
+    // ctx.drawImage(myImage, 0, 0);p
   }
 
 

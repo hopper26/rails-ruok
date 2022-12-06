@@ -1,9 +1,12 @@
+.container-map {
+margin: 0;
+padding: 0;
+}
+
 #map {
-  height: 600px;
-  width: 600px;
-  margin-top: 50%;
-  margin-left: 50%;
-  margin-top: 45px;
-  margin-left: -135px;
-  padding-bottom: 20px;
+position: absolute;
+margin-top: 120px;
+top: 0;
+bottom: 0;
+width: 50%;
 }
