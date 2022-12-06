@@ -18,7 +18,7 @@ class PagesController < ApplicationController
     @data = JSON.parse(res)
   end
 
-  def contacts
+  def videos
   end
 
   def exercise

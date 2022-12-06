@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/tiles", to: "pages#tiles"
   get "/tiles/breathing", to: "pages#breathing"
   get "/tiles/exercise", to: "pages#exercise"
-  get "/tiles/contacts", to: "pages#contacts"
+  get "/tiles/videos", to: "pages#videos"
   get "/tiles/chat", to: "pages#chat"
   resources :posts
   resources :goals
