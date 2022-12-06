@@ -21,7 +21,15 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     authorize @post
+    # @post.user.image.attach(params[:image])
+
     # @post.notepad = params[:post][:rich_body]
+    # attach_scribble(imageURL)
+    # File.open("#{Rails.root}/public/uploads/image.png", "wb") do |f|
+    #   f.write(params[:image].read())
+
+
+
     if @post.save
       redirect_to "/posts?date=#{params[:post][:date]}", status: :see_other
     else
@@ -49,9 +57,23 @@ class PostsController < ApplicationController
     redirect_to posts_path(date: params[:date]), notice: "Entry deleted", status: :see_other
   end
 
+  # def attach_scribble(url)
+  #   @post.image = URI.parse(url)
+  #   @post.save!
+  # end
+
+    # image_handle = open url
+    # extension = image_handle.content_type.gsub 'image/', ""
+
+    # temp_file = Tempfile.new['image', extension]
+    # temp_file.write image_handle.read
+    # temp_file.close
+
+    # @post.image = temp_file
+
   private
 
   def post_params
-    params.require(:post).permit(:rich_body, :title, :created_at)
+    params.require(:post).permit(:rich_body, :title, :created_at, :image)
   end
 end

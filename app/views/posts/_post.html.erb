@@ -6,12 +6,10 @@
         <div class="form-inputs">
           <%= f.rich_text_area :rich_body %>
         </div>
-        <%# <div class="form-inputs">
-          <%= f.input :notepad %>
-        <%# </div>  %>
         <div class="form-inputs">
           <%= f.input_field :date, as: :hidden, value: params[:date] %>
         </div>
+        <%# <%= f.file_field :image %>
         <div class="form-actions">
           <button type="submit">
             <i class="fa fa-floppy-disk"></i>

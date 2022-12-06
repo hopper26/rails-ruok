@@ -25,6 +25,12 @@ class PagesController < ApplicationController
   end
 
   def chat
+    @ans = params[:ans]
+    @question1 = if @ans == 'Y'
+                   'Well done'
+                 else
+                   'You need to keep hydrated'
+                 end
   end
 
   def test
