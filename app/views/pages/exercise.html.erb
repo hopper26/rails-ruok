@@ -50,6 +50,14 @@ const geocoder = new MapboxGeocoder({
       mapboxgl: mapboxgl
   });
 
+    const locator = new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true,
+      showUserHeading: true
+    });
+
 geocoder.on('result', function(e) {
   const longitude = e.result.center[0];
   const latitude = e.result.center[1];
@@ -64,6 +72,13 @@ const map = new mapboxgl.Map({
   center: [144.974265, -37.864562],
   zoom: 15 // starting zoom
 });
+
+map.addControl(
+new MapboxDirections({
+accessToken: mapboxgl.accessToken
+}),
+'bottom-left'
+);
 
 // Target the params form in the HTML
 const params = document.getElementById('params');
@@ -136,7 +151,7 @@ map.addLayer(
 'poi-label'
 );
 map.addControl(geocoder);
-
+map.addControl(locator);
 // Initialize the marker at the query coordinates
 marker.setLngLat(lngLat).addTo(map);
 
