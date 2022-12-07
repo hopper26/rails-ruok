@@ -42,68 +42,68 @@ user.save
   post = Post.new(
     title: arrt[x],
     rich_body: Faker::Lorem.paragraphs,
-    user_id: 1,
+    user: user,
     created_at: DateTime.now - (rand * 50)
   )
-  post.save
+  post.save!
 end
 
 post = Post.new(
   title: "So very tired",
   rich_body: "It has been a very long week. Have barely slept. Can not stop thinking about all that I need to get done. Why does
   nothing ever work for me. One positive thing is I have nearly finished my course. Need to remember to book my ticket to Sydney",
-  user_id: 1,
+  user: user,
   created_at: "Thu, 08 Dec 2022 03:12:18 +1100"
 )
-post.save
+post.save!
 
 #### fake goals ####
 5.times do |i|
   goal = Goal.new(
-    user_id: 1,
+    user: user,
     section: "Self Care",
     content: arr1[i].to_s,
     completed: [true, false].sample
   )
-  goal.save
+  goal.save!
 end
 
 3.times do |i|
   goal = Goal.new(
-    user_id: 1,
+    user: user,
     section: "Accomplishments",
     content: arr2[i].to_s,
     completed: [true, false].sample
   )
-  goal.save
+  goal.save!
 end
 
 3.times do |i|
   goal = Goal.new(
-    user_id: 1,
+    user: user,
     section: "Enjoyment",
     content: arr3[i].to_s,
     completed: [true, false].sample
   )
-  goal.save
+  goal.save!
 end
 
 4.times do |i|
   goal = Goal.new(
-    user_id: 1,
+    user: user,
     section: "Activities",
     content: arr4[i].to_s,
     completed: [true, false].sample
   )
-  goal.save
+  goal.save!
 end
 
 #### fake emotions ####
 80.times do
   emotion = Emotion.new(
-    user_id: 1,
+    user: user,
     feeling: Random.rand(0..2),
     created_at: DateTime.now - (rand * 50)
   )
-  emotion.save
+  emotion.save!
 end
