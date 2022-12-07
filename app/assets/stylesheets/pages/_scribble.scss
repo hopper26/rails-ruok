@@ -1,0 +1,32 @@
+#canvas {
+  border: 15px ridge grey;
+  margin: -10px auto;
+  cursor: url('paint.png'), auto;
+  background: white;
+  border-radius: 20px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+#wrapper {
+  width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#buttons {
+  // border: 5px solid blue;
+  width: 50px;
+  padding-top: 20px;
+}
+
+.container-scribble {
+  margin: 0;
+  padding: 50px;
+}
+
+.titles {
+  text-align: center;
+  padding-bottom: 20px;
+}

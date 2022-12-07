@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "/tiles/breathing", to: "pages#breathing"
   get "/tiles/exercise", to: "pages#exercise"
   get "/tiles/videos", to: "pages#videos"
-  get "/tiles/chat", to: "pages#chat"
+  get "/tiles/scribble", to: "pages#scribble"
   resources :posts
   resources :goals
   resources :emotions, only: [:create]

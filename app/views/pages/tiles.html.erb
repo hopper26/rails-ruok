@@ -2,6 +2,7 @@
   <%# https://type.fit/api/quotes %>
   <%# "https://zenquotes.io/api/today" %>
   <div data-controller="quotes" data-quotes-url-value="https://type.fit/api/quotes">
+    <div data-quotes-target="quote" id="quote"></div>
     <div class="cards">
       <div class="each_card">
         <%= link_to '<i class="bi bi-journal-richtext tile-icons"></i>'.html_safe, posts_path(date: Time.now.strftime('%Y-%m-%d')) %>
@@ -12,30 +13,29 @@
         <h2 class="tile_title"> Breathing</h2>
       </div>
       <div class="each_card">
-        <%= link_to '<i class="fa-solid fa-person-walking tile-icons"></i>'.html_safe, tiles_exercise_path %>
-        <h2 class="tile_title">Exercise</h2>
-      </div>
-      <div class="each_card">
-        <%= link_to '<i class="fa-solid fa-film tile-icons"></i>'.html_safe, tiles_videos_path %>
-        <h2 class="tile_title">Videos</h2>
-      </div>
-      <div class="each_card">
-        <%= link_to '<i class="fa-regular fa-comments tile-icons"></i>'.html_safe, tiles_chat_path %>
-        <h2 class="tile_title">Chat</h2>
+        <%= link_to '<i class="fa-solid fa-pencil tile-icons"></i>'.html_safe, tiles_scribble_path %>
+        <h2 class="tile_title">Scribble</h2>
       </div>
       <div class="each_card">
         <%= link_to '<i class="fa-regular fa-rectangle-list tile-icons"></i>'.html_safe, goals_path %>
         <h2 class="tile_title">Goals</h2>
       </div>
-      <br>
+      <div class="each_card">
+        <%= link_to '<i class="fa-solid fa-person-walking tile-icons"></i>'.html_safe, tiles_exercise_path %>
+        <h2 class="tile_title">Outdoors</h2>
+      </div>
+      <div class="each_card">
+        <%= link_to '<i class="fa-solid fa-film tile-icons"></i>'.html_safe, tiles_videos_path %>
+        <h2 class="tile_title">Videos</h2>
+      </div>
+
+      <%# <br>
       <div class="each_card">
         <div data-quotes-target="quote" id="quote"></div>
           <br>
-          <% @data.each do |data| %>
-            <%= "Quote: #{data["q"]}" %>
-          <% end %>
-        </div>
-      </div>
-    <br><br><br>
-    <%= link_to "Testing Area", test_path %>
+          <%# <% @data.each do |data| %>
+            <%# <%= "Quote: #{data["q"]}" %>
+          <%# <% end %>
+        <%# </div> %>
+      <%# </div> %>
 </div>

@@ -24,13 +24,7 @@ class PagesController < ApplicationController
   def exercise
   end
 
-  def chat
-    @ans = params[:ans]
-    @question1 = if @ans == 'Y'
-                   'Well done'
-                 else
-                   'You need to keep hydrated'
-                 end
+  def scribble
   end
 
   def test
