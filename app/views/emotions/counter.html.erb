@@ -7,17 +7,16 @@
 <% end %>
 <br>
 
-<ul>
-<br>
-  <%= "Month - #{Date::MONTHNAMES[params[:month].to_i]}" %>
-  <p><%= "Number of times face was clicked: #{@emotion_h + @emotion_m + @emotion_s}" %></p>
-  <li>Happy Count: <%= "#{(@emotion_h.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round}%" %></li>
-  <li>Meh Count: <%= "#{(@emotion_m.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round}%" %></li>
-  <li>Sad Count: <%= "#{(@emotion_s.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round}%" %></li>
 
-</ul>
-
-
-
-<% data = [["happy", (@emotion_h.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round], ["meh", (@emotion_m.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round], ["sad", (@emotion_s.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round]] %>
-<%= pie_chart data, colors:['green', 'orange', 'red'], library: { pieSliceText: 'value' } %>
+<% if ((@emotion_h + @emotion_m + @emotion_s) != 0) %>
+  <br>
+  <ul>
+    <%= "Month - #{Date::MONTHNAMES[params[:month].to_i]}" %>
+    <p><%= "Number of times face was clicked: #{@emotion_h + @emotion_m + @emotion_s}" %></p>
+    <li>Happy Count: <%= "#{(@emotion_h.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round}%" %></li>
+    <li>Meh Count: <%= "#{(@emotion_m.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round}%" %></li>
+    <li>Sad Count: <%= "#{(@emotion_s.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round}%" %></li>
+  </ul>
+  <% data = [["happy", (@emotion_h.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round], ["meh", (@emotion_m.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round], ["sad", (@emotion_s.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round]] %>
+  <%= pie_chart data, colors:['green', 'orange', 'red'], library: { pieSliceText: 'value' } %>
+<% end %>

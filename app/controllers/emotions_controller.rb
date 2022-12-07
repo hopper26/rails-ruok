@@ -15,7 +15,7 @@ class EmotionsController < ApplicationController
   def counter
     authorize Emotion
 
-    if params[:month] == ""
+    if params[:month].blank?
       @emotion_h = (policy_scope(Emotion).select do |emotion|
         emotion.created_at.year.to_s == params[:year] && emotion.feeling == "happy"
       end).count
