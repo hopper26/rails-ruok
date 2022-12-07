@@ -1,6 +1,8 @@
-<h1>Exercise</h1>
 <div class="container-map">
+<h1>Exercise</h1>
+
 <div id="map"></div>
+<div id="geocoder" class ="geocoder"></div>
   <div class="absolute fl my24 mx24 py24 px24 bg-gray-faint round">
     <form id="params">
       <h4 class="txt-m txt-bold mb6">Choose a travel mode:</h4>
@@ -40,8 +42,6 @@
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoiaGFsdWNhczkzIiwiYSI6ImNsOXhpZ3JrcjBha2szdXBhOGJ1dHEweWsifQ.HBOlhDzuu3Oq52Zhouf39w';
 
-
-
   const map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v12', // stylesheet
@@ -57,10 +57,6 @@
   let profile = 'walking';
   let minutes = 10;
 
-  // const marker = new mapboxgl.Marker({
-  //   //'color': '#314ccd'
-  // });
-
    const lngLat = {
       lon: lon,
       lat: lat
@@ -68,10 +64,14 @@
 
   const geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
-    marker: {
-      color: 'orange'
-    },
+    marker: false,
     mapboxgl: mapboxgl,
+    flyTo: {
+      zoom: 14,
+      easing: function (t) {
+        return t;
+      }
+    }
   });
 
   const geolocate = new mapboxgl.GeolocateControl({
@@ -79,11 +79,15 @@
       enableHighAccuracy: true
     },
     trackUserLocation: true,
-    showUserHeading: true
+    showUserHeading: true,
+    marker: false,
+    flyTo: {
+      zoom: 15,
+      easing: function (t) {
+        return t;
+      }
+    }
   });
-
-
-  // marker.setLngLat(lngLat).addTo(map);
 
   // Create a function that sets up the Isochrone API query then makes a fetch call
   async function getIso() {
@@ -121,6 +125,11 @@
     },
     'poi-label'
     );
+    const el = document.createElement('div');
+    el.className = 'marker';
+    new mapboxgl.Marker(el)
+      .setLngLat([lon,lat])
+      .addTo(map);
   });
 
  geolocate.on('geolocate', (event) => {
@@ -140,7 +149,11 @@
     },
     'poi-label'
     );
-
+    const el = document.createElement('div');
+    el.className = 'marker';
+    new mapboxgl.Marker(el)
+      .setLngLat([lon,lat])
+      .addTo(map);
   });
 
   map.addControl(geocoder);
@@ -162,6 +175,7 @@
       }
     });
 
+
     map.addLayer( {
       'id': 'isoLayer',
       'type': 'fill',
@@ -174,17 +188,7 @@
     },
     'poi-label'
     );
+
     getIso();
-
 });
-
-    // // add markers to map
-    // for (const feature of geojson.features) {
-    // // create a HTML element for each feature
-    //   const el = document.createElement('div');
-    //   el.className = 'marker';
-
-    // // make a marker for each feature and add to the map
-    //   new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
-    // }
 </script>
