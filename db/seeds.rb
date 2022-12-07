@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
+User.destroy_all
+Post.destroy_all
+Goal.destroy_all
+Emotion.destroy_all
 
 # arrays for the goals tile
 arr1 = ["Take a shower", "Take 5 minutes to just do nothing", "Do the laundry", "Have a nap", "Eat something 'naughty'"]
