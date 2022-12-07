@@ -1,6 +1,4 @@
 <h1>Face Tracker</h1>
-<%# <%= current_user.emotions.feeling("happy").count %>
-<%# <%= @emotion.feeling %>
 
 <% option_month =  [['January',1], ['February',2], ['March',3], ['April',4], ['May',5], ['June',6], ['July',7], ['August',8], ['September',9], ['October',10], ['November',11], ['December',12]]%>
 <%= form_tag({controller: 'emotions', action: 'counter'}, method: 'get') do %>
@@ -12,12 +10,14 @@
 <ul>
 <br>
   <%= "Month - #{Date::MONTHNAMES[params[:month].to_i]}" %>
-  <li>Happy Count: <%= @emotion_h %></li>
-  <li>Meh Count: <%= @emotion_m %></li>
-  <li>Sad Count: <%= @emotion_s %></li>
+  <p><%= "Number of times face was clicked: #{@emotion_h + @emotion_m + @emotion_s}" %></p>
+  <li>Happy Count: <%= "#{(@emotion_h.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round}%" %></li>
+  <li>Meh Count: <%= "#{(@emotion_m.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round}%" %></li>
+  <li>Sad Count: <%= "#{(@emotion_s.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round}%" %></li>
+
 </ul>
 
 
 
-<% data = [["happy", @emotion_h], ["meh", @emotion_m], ["sad", @emotion_s]] %>
+<% data = [["happy", (@emotion_h.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round], ["meh", (@emotion_m.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round], ["sad", (@emotion_s.fdiv(@emotion_h + @emotion_m + @emotion_s)*100).round]] %>
 <%= pie_chart data, colors:['green', 'orange', 'red'], library: { pieSliceText: 'value' } %>
