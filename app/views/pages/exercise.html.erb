@@ -43,12 +43,10 @@
   const map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v12', // stylesheet
-    ///center: [-77.0369, 38.895], // starting position [lng, lat]
     center: [144.974265, -37.864562],
     zoom: 13 // starting zoom
   });
 
-    // Target the params form in the HTML
   const params = document.getElementById('params');
 
   const urlBase = 'https://api.mapbox.com/isochrone/v1/mapbox/';
@@ -56,7 +54,6 @@
   let lat = -37.864562;
   let profile = 'walking';
   let minutes = 10;
-
 
   const marker = new mapboxgl.Marker({
     'color': '#314ccd'
@@ -84,7 +81,6 @@
   });
 
 
-// Initialize the marker at the query coordinates
   // marker.setLngLat(lngLat).addTo(map);
 
   // Create a function that sets up the Isochrone API query then makes a fetch call
@@ -94,11 +90,9 @@
       { method: 'GET' }
     );
     const data = await query.json();
-  // Set the 'iso' source's data to what's returned by the API query
     map.getSource('iso').setData(data);
   }
 
-  // When a user changes the value of profile or duration by clicking a button, change the parameter's value and make the API query again
   params.addEventListener('change', (event) => {
     if (event.target.name === 'profile') {
       profile = event.target.value;
@@ -127,11 +121,7 @@
     );
   });
 
-
-
  geolocate.on('geolocate', (event) => {
-    console.log(event)
-  // console.log(event)
     lon = event.coords.longitude;
     lat = event.coords.latitude;
     getIso();
@@ -161,7 +151,6 @@
   );
 
   map.on('load', () => {
-// When the map loads, add the source and layer
     map.addSource('iso', {
       type: 'geojson',
       data: {
@@ -182,10 +171,6 @@
     },
     'poi-label'
     );
-    // Make the API call
     getIso();
 });
-
-
-
 </script>
