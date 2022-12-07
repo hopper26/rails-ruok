@@ -40,6 +40,8 @@
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoiaGFsdWNhczkzIiwiYSI6ImNsOXhpZ3JrcjBha2szdXBhOGJ1dHEweWsifQ.HBOlhDzuu3Oq52Zhouf39w';
 
+
+
   const map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v12', // stylesheet
@@ -55,9 +57,9 @@
   let profile = 'walking';
   let minutes = 10;
 
-  const marker = new mapboxgl.Marker({
-    'color': '#314ccd'
-  });
+  // const marker = new mapboxgl.Marker({
+  //   //'color': '#314ccd'
+  // });
 
    const lngLat = {
       lon: lon,
@@ -69,7 +71,7 @@
     marker: {
       color: 'orange'
     },
-    mapboxgl: mapboxgl
+    mapboxgl: mapboxgl,
   });
 
   const geolocate = new mapboxgl.GeolocateControl({
@@ -151,6 +153,7 @@
   );
 
   map.on('load', () => {
+
     map.addSource('iso', {
       type: 'geojson',
       data: {
@@ -172,5 +175,16 @@
     'poi-label'
     );
     getIso();
+
 });
+
+    // // add markers to map
+    // for (const feature of geojson.features) {
+    // // create a HTML element for each feature
+    //   const el = document.createElement('div');
+    //   el.className = 'marker';
+
+    // // make a marker for each feature and add to the map
+    //   new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+    // }
 </script>
