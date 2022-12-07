@@ -13,6 +13,14 @@
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", finishedPosition);
     canvas.addEventListener("mousemove", draw);
+    function touchstart(event) { startPosition(event.touches[0]) }
+    function touchmove(event) { draw(event.touches[0]); event.preventDefault(); }
+    function touchend(event) { finishedPosition(event.changedTouches[0]) }
+
+    canvas.addEventListener('touchstart', touchstart, false);
+    canvas.addEventListener('touchmove', touchmove, false);
+    canvas.addEventListener('touchend', touchend, false);
+
     // let imageURL;
 
     function startPosition(event) {
