@@ -26,7 +26,7 @@ user.save
 
 59.times do |x|
   post = Post.new {
-    title: arrt(x),
+    title: arrt[x],
     rich_body: Faker::Lorem.paragraphs,
     user_id: 1,
     created_at: DateTime.now - (rand * 50)
@@ -84,9 +84,11 @@ end
 end
 
 #### fake emotions ####
-emotion = Emotion.new {
-  user_id: 1,
-  feeling: Random.rand(0..2),
-  created_at: DateTime.now - (rand * 50)
-}
+80.times do
+  emotion = Emotion.new {
+    user_id: 1,
+    feeling: Random.rand(0..2),
+    created_at: DateTime.now - (rand * 50)
+  }
+end
 emotion.save
