@@ -1,4 +1,4 @@
-.container-tracker h1 {
+.container-tracker {
   text-align: center;
   padding: 30px;
 }
@@ -19,7 +19,7 @@
   border: 3px solid #759CC9;
 }
 
-.fa-face-smile {
+#smile {
 	font-size: 100px;
 	border-radius: 50%;
 	opacity: 0.9;
@@ -27,30 +27,28 @@
   padding-top: 20px;
 }
 
-.fa-face-meh {
+#meh {
 	font-size: 100px;
   border-radius: 50%;
 	opacity: 0.9;
 	color:  orange;
   padding-top: 20px;
-  padding-bottom: 25px;
 }
 
-.fa-face-frown {
+#frown {
 	font-size: 100px;
 	border-radius: 50%;
 	opacity: 0.9;
 	color:  red;
-  padding-bottom: 10px;
+  padding-top: 20px;
 }
 
 .track-faces {
-  align-items: center;
-}
-
-.happy, .meh, .sad {
-  display: table-cell;
-  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 60px;
 }
 
 .month_input {
@@ -63,5 +61,16 @@
 }
 
 .graphs {
+  padding-top: 80px;
   text-align: center;
 }
+
+// form {
+//   padding: 60px;
+// }
+
+// .track-graphs {
+//   background: white;
+//   border: 2px solid, #aeaeae;
+//   border-radius: 20px;
+// }

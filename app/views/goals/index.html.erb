@@ -1,6 +1,5 @@
 <%= render "shared/navbar" %>
 <div class="container-goals">
-  <h1>Goals</h1>
 
   <% if notice.present? %>
     <%= notice %>
@@ -12,13 +11,50 @@
   <br>
 
   <div class="goal-listed" data-controller="goals">
-
+    <div class="section">
+      <h5>Self Care</h5>
       <%= render @goals1 %>
-      <br><br>
-      <%= render @goals2 %>
-      <br><br>
+    </div>
+    <div class="section">
+      <h5>Accomplishments</h5>
+     <%= render @goals2 %>
+    </div>
+    <div class="section">
+      <h5>Achievements</h5>
       <%= render @goals3 %>
-      <br><br>
+    </div>
+    <div class="section">
+      <h5>Enjoyment</h5>
       <%= render @goals4 %>
-  </div>
+    </div>
+
+    <%# <div class="w3-bar">
+      <button class="w3-bar-item" onclick="openGoal('Self Care')">Self Care</button>
+      <button class="w3-bar-item" onclick="openGoal('Accomplishments')">Accomplishments</button>
+      <button class="w3-bar-item" onclick="openGoal('Activities')">Activities</button>
+      <button class="w3-bar-item" onclick="openGoal('Enjoyment')">Enjoyment</button>
+    </div>
+    <div id="Self Care" class="w3-container list">
+      <%= render @goals1 %>
+    <%# </div>
+    <div id="Accomplishments" class="w3-container list" style="display:none">
+      <%= render @goals2 %>
+    <%# </div>
+    <div id="Activities" class="w3-container list" style="display:none">
+      <%= render @goals3 %>
+    <%# </div>
+    <div id="Enjoyment" class="w3-container list" style="display:none">
+      <%= render @goals4 %>
+    <%# </div>
+  </div>  %>
 </div>
+<script>
+  // function openGoal(goalList) {
+  //   var i;
+  //   var x = document.getElementsByClassName("list");
+  //   for (i = 0; i < x.length; i++) {
+  //     x[i].style.display = "none";
+  //   }
+  //   document.getElementById(goalList).style.display = "block";
+  // }
+</script>
