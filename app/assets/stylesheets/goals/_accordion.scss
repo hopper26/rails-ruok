@@ -25,38 +25,23 @@ h5 {
   flex: auto;
 }
 
-// .accordion {
-//   background-color: #AEAEAE;
-//   color: #838383;
-//   cursor: pointer;
-//   padding: 20px;
-//   width: 100%;
-//   text-align: left;
-//   border: none;
-//   outline: none;
-//   transition: 0.4s;
-// }
+#submit-button-id {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid black;
+  font-size: 20px;
+  color: #838383;
+  font-family: 'Neucha', cursive;
+  box-shadow: 1px 1px 1px 1px #8FB1cc;
+}
 
-// .active, .accordion:hover {
-//   background-color: #8FB1CC;
-// }
+#submit-button-id:active {
+  background: #759CC9;
+  transition: ease 0.3s;
+}
 
-// .panel {
-//   padding: 0 20px;
-//   background-color: #EEECF1;
-//   max-height: 0;
-//   overflow: hidden;
-//   transition: max-height 0.2s ease-out;
-// }
-
-// .accordion:after {
-//   content: "\02795";
-//   font-size: 14px;
-//   color: #759cc9;
-//   float: right;
-//   margin-left: 5px;
-// }
-
-// .active:after {
-//   content: "\2796";
-// }
+.form-control {
+  border: 2px solid #759cc9;
+  border-radius: 10px;
+}

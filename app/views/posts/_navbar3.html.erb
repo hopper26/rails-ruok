@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <%= link_to '<i class="fa-solid fa-left-long nav-icons"></i>'.html_safe, "/posts?date=#{params[:date]}", class: "navbar-brand" %>
     <%= link_to '<i class="fa-solid fa-phone-volume nav-icons"></i>'.html_safe, "https://findahelpline.com/i/ruok/", target: :_blank, class: "navbar-brand nav-icons" %>
-    <%= link_to '<i class="fa-regular fa-face-sad-cry nav-icons"></i>'.html_safe, "/emotion", class: "navbar-brand nav-icons" %>
+    <%= link_to '<i class="fa-regular fa-face-sad-cry nav-icons"></i>'.html_safe, "/emotion?month=&year=#{DateTime.now.year}", class: "navbar-brand nav-icons" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
