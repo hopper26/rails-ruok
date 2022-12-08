@@ -10,10 +10,10 @@
 }
 
 .container-scribble {
-  width: 850px;
+  width: 815px;
   margin: 0 auto;
   text-align: center;
-  padding: 50px;
+  padding: 55px;
 }
 
 #color {
@@ -26,8 +26,8 @@
 
 #clear {
   // border: 5px solid blue;
-  width: 160px;
-  margin-top: 30px;
+  width: 150px;
+  margin-top: 50px;
   padding: 15px;
   border-radius: 30px;
   text-align: center;
@@ -35,13 +35,14 @@
   font-size: 35px;
   color: #838383;
   font-family: 'Neucha', cursive;
+  box-shadow: 1px 2px 1px 2px #8FB1cc;
 }
 
-.titles {
-  text-align: center;
-  padding-bottom: 15px;
-  font-size: 40px;
-}
+// .titles {
+//   text-align: center;
+//   padding-bottom: 15px;
+//   font-size: 40px;
+// }
 
 #clear:active {
   background: #759CC9;
