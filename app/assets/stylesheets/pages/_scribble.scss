@@ -1,6 +1,6 @@
 #canvas {
   border: 15px ridge #759CC9;
-  margin: 36px auto;
+  margin: 10px auto;
   cursor: url('paint.png'), auto;
   background: white;
   border-radius: 20px;
@@ -22,13 +22,14 @@
   padding: 6px;
   border-radius: 50%;
   background-color: #838383;
+  margin-right: 220px;
 }
 
 #clear {
   // border: 5px solid blue;
   width: 150px;
-  margin-top: 50px;
-  padding: 15px;
+  margin-top: 45px;
+  padding: 10px;
   border-radius: 30px;
   text-align: center;
   border: 2px solid black;
@@ -38,13 +39,11 @@
   box-shadow: 1px 2px 1px 2px #8FB1cc;
 }
 
-// .titles {
-//   text-align: center;
-//   padding-bottom: 15px;
-//   font-size: 40px;
-// }
-
 #clear:active {
   background: #759CC9;
   transition: ease 0.3s;
+}
+
+label {
+  font-size: 20px;
 }
