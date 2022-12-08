@@ -1,16 +1,20 @@
 #quote {
   text-align: center;
   text-decoration: none;
-  color: #949494;
-  border: 2px dotted #759CC9;
-  font-family: 'Overpass', sans-serif;
+  color: #838383;
+  background-color: white;
+  border: 2px solid #759CC9;
+  border-radius: 20px;
+  font-family: 'Sriracha', sans-serif;
   margin: 0, auto;
   padding: 10px;
+  font-size: 20px;
 }
 
 .container_tiles {
   margin: 0, auto;
   padding: 20px;
+  background: #eeecf1;
 }
 
 .cards {
@@ -21,13 +25,15 @@
   justify-items: center;
   align-content: space-evenly;
   align-items: center;
+  padding: 20px;
+
 }
 
 .each_card {
   box-shadow: 1px 1px 2px 1px #EEECF1;
   padding: 5px;
   width: 400px;
-  height: 300px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,8 +44,10 @@
   font-size: 20px;
   font-weight: lighter;
   letter-spacing: 2px;
+  border: 2px solid #759CC9;
   transition: 1s box-shadow;
   cursor: pointer;
+  z-index: 1;
 }
 
 .each_card:hover {
@@ -147,6 +155,7 @@
   font-family: "Sriracha", cursive;
   text-align: center;
   padding: 10px;
+  color: #838383;
 }
 
 .tile-icons {
