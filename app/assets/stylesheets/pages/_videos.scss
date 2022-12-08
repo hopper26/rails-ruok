@@ -3,14 +3,25 @@
 //   width: 100%;
 // }
 
-.container-video h1 {
-  text-align: center;
-  padding: 20px;
-}
+// .container-video {
+//   margin: 0, auto;
+//   padding: 20px;
+// }
 
 .container-video {
   margin: 0, auto;
-  padding: 20px;
+  padding: 40px;
+}
+
+.container-video h2 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+iframe {
+  padding-top: 200px;
+  margin: 0, auto;
+  display: block;
 }
 
 .carousel-control.prev {
@@ -21,11 +32,26 @@
   place-self: center right;
 }
 
-.carousel-item {
-  width:100%;
-  height: auto;
-}
+// .carousel-item {
+//   padding-top: 200px;
+//   width:100%;
+//   height: auto;
+//   display: block;
+//   align-self: center;
+//   // align-items: center;
+//   // justify-items: center;
+//   place-items: center;
+// }
 
 .carousel-indicators {
   bottom: -95px;
+  width: auto;
+  background-color: #759cc9;
 }
+
+// .embed-responsive-item {
+//   width: 100%;
+//   height: auto;
+//   object-fit: cover;
+//   aspect-ratio: 16 / 9;
+// }
