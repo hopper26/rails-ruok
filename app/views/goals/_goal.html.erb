@@ -1,18 +1,25 @@
 
 <%= simple_form_for(goal) do |f| %>
-  <%= f.check_box :completed,
-                  data: {
-                    id: goal.id,
-                    action: "goals#goaltoggle"
-                  } %>
-  <% if goal.completed == true %>
-    <span class="strikethrough"><%= goal.content%></span>
-  <% else %>
-    <%= goal.content %>
-  <% end %>
-
-  <% if policy(goal).edit? %>
-    <%= link_to "Edit", edit_goal_path(goal, section: params[:section]) %>
-  <% end %>
-  <%= link_to "Delete", goal_path(goal), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(goal).destroy? %>
+  <div style="
+    display: flex;
+    justify-content: space-between;">
+    <div>
+      <%= f.check_box :completed,
+                      data: {
+                        id: goal.id,
+                        action: "goals#goaltoggle"
+                      } %>
+      <% if goal.completed == true %>
+        <span class="strikethrough"><%= goal.content%></span>
+      <% else %>
+        <%= goal.content %>
+      <% end %>
+    </div>
+    <div>
+      <% if policy(goal).edit? %>
+      <p class="editgoals"> <%= link_to "Edit", edit_goal_path(goal, section: params[:section]) %></p>
+      <p class="editgoals"><%= link_to "Delete", goal_path(goal), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(goal).destroy? %></p>
+      <% end %>
+    </div>
+  </div>
 <% end %>

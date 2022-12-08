@@ -1,13 +1,10 @@
-<%= render "posts/navbar3" %>
-<%= link_to "Entries", posts_path(date: params[:date]) %>
-
+<%= render "navbar5" %>
 <div class="container-entry">
-  <h2>Entry</h2>
-  <div class="tabs">
+  <div class="tabs" style="width: 90%;">
     <div class="tab">
       <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
       <label for="tab-1" class="tab-label">Notepad</label>
-      <div class="tab-content">
+      <div class="tab-content" style="width: 100%;">
         <p><%= "Created on: #{params[:date]}" %></p>
         <h1><%= "Title: #{@post.title}" %></h1>
         <p><%= @post.rich_body %></p>

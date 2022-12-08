@@ -7,22 +7,52 @@
   margin: 0 auto;
 }
 
-.container-journal h1 {
+.form-control1 {
+  border: 2px solid #759cc9;
+  background: #eeecf1;
+  color: black;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 36px;
   text-align: center;
-  padding-bottom: 20px;
+  margin-right: 10px;
 }
 
-.container-journal {
-  width: 100%;
-  padding: 30px;
-  margin: 0 auto;
+.btn {
+  padding: 7px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #759cc9;
+  font-size: 20px;
+  color: #838383;
+  font-family: 'Neucha', cursive;
+  box-shadow: 1px 1px 1px 1px #8FB1cc;
+  margin-bottom: 40px;
+  margin-top: 10px;
 }
+.btn:active {
+  background: #759CC9;
+  transition: ease 0.3s;
+}
+
 .add-entry {
-  display: flex;
+  // display: flex;
   text-align: center;
   font-size: 50px;
-  margin-left: 50%;
-  margin-left: 865px;
+}
+
+.bullets {
+  list-style-image: url('paint.png');
+  padding: 20px;
+  font-size: 20px;
+}
+
+.entry-area {
+  padding: 20px;
+  background: white;
+  border: 3px solid #759cc9;
+  font-size: 30px;
+  font-family: 'Neucha', sans-serif;
 }
 
 .tabs {
@@ -62,30 +92,59 @@
   top: -0.25rem;
   transition: top 0.25s;
 }
+
+//area for the
 .tab-content {
   height: 45rem;
   position: absolute;
   z-index: 1;
   top: 5.75em;
-  left: 20px;
+  left: 45px;
   padding: 1.618rem;
   background: #fff;
   color: #2c3e50;
   border-bottom: 0.25rem solid #bdc3c7;
   opacity: 0;
+  margin-right: 30px;
   // transition: all 0.35s;
 }
 .tab-switch:checked + .tab-label {
-  background: #1abc9c;
+  background: #8FB1CC;
+  border-radius: 10px;
   color: #2c3e50;
   border-bottom: 0;
+  left: 25px;
   border-right: 0.125rem solid #1abc9c;
   // transition: all 0.35s;
   z-index: 1;
-  top: -0.0625rem;
+  top: 0.9375rem;
 }
 .tab-switch:checked + label + .tab-content {
   z-index: 2;
   opacity: 1;
   // transition: all 0.35s;
+}
+
+.save-entry {
+  margin-top: 20px;
+  margin-left: 50%;
+  margin-left: 255px;
+  padding: 20px;
+  border: none;
+  background: white;
+}
+.fa-floppy-disk {
+  font-size: 60px;
+  color: #759cc9;
+}
+
+.fa-pen-to-square {
+  font-size: 40px;
+  color: #759cc9;
+  margin-left: 80%;
+}
+
+.fa-trash-can {
+  font-size: 40px;
+  color: #759cc9;
 }

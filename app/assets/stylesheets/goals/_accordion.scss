@@ -15,6 +15,10 @@
   width: 100%;
 }
 
+.container-edit-goals h1 {
+  padding-bottom:  20px;
+}
+
 h5 {
   font-family: 'Sriracha', sans-serif;
   text-decoration: underline;
@@ -30,6 +34,8 @@ h5 {
   color: #838383;
   font-family: 'Neucha', cursive;
   box-shadow: 1px 1px 1px 1px #8FB1cc;
+  margin-bottom: 40px;
+  margin-top: 10px;
 }
 
 #submit-button-id:active {
@@ -42,6 +48,7 @@ h5 {
   background: #eeecf1;
   color: black;
   border-radius: 10px;
+  margin-top: 10px;
 }
 
 .goalcat {
@@ -60,4 +67,15 @@ h5 {
 .goalbtn {
   display: flex;
   align-items: right;;
+}
+
+
+.editgoals {
+  display: inline-block;
+  justify-items: right;
+  // border: 1px solid #759cc9;
+  color: #949494;
+  margin-right: 5px;
+  height: 12px;
+
 }

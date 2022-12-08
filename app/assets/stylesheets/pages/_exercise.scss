@@ -4,7 +4,7 @@
   }
 
 .geocoder {
-  position: absolute;
+  position: relative;
   z-index: 1;
   width: 70%;
   left: 73%;
@@ -13,14 +13,17 @@
   }
   .mapboxgl-ctrl-geocoder {
   min-width: 100%;
+  width: 300px!important;
   }
   #map {
   position: absolute;
-  margin-top: 120px;
-  margin-left: 50%;
+  margin-top: 79px;
+  margin-left: 30%;
+  margin-right: 10%;
   top: 0;
   bottom: 0;
-  width: 50%;
+  width: 68%;
+  border-radius: 1em;
   }
 
 .marker {
@@ -41,3 +44,63 @@ max-width: 200px;
 text-align: center;
 font-family: 'Open Sans', sans-serif;
 }
+
+#outdoor-form {
+  background-color: rgb(173, 195, 209);
+  width: 25%;
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 2.5%;
+  margin-top: 40%;
+  padding: 5px;
+}
+
+.toggle {
+  font-size: 13px
+}
+
+
+
+// .container-map {
+//   margin: 0, auto;
+//   padding: 40px, 40px;
+//   }
+
+// .geocoder {
+//   position: absolute;
+//   z-index: 1;
+//   width: 70%;
+//   left: 73%;
+//   margin-left: -25%;
+//   top: 100px;
+//   }
+//   .mapboxgl-ctrl-geocoder {
+//   min-width: 100%;
+//   }
+//   #map {
+//   position: absolute;
+//   margin-top: 120px;
+//   margin-left: 50%;
+//   top: 0;
+//   bottom: 0;
+//   width: 50%;
+//   }
+
+// .marker {
+//   background-image: url('map_mark.png');
+//   background-size: cover;
+//   border-radius: 50%;
+//   background-color: white;
+//   width: 60px;
+//   height: 60px;
+//   border: 3px solid green;
+//   cursor: pointer;
+//   }
+
+// .mapboxgl-popup {
+// max-width: 200px;
+// }
+// .mapboxgl-popup-content {
+// text-align: center;
+// font-family: 'Open Sans', sans-serif;
+// }
