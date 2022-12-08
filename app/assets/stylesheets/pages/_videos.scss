@@ -1,0 +1,31 @@
+// .carousel-item iframe {
+//   height: 200px;
+//   width: 100%;
+// }
+
+.container-video h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+.container-video {
+  margin: 0, auto;
+  padding: 20px;
+}
+
+.carousel-control.prev {
+  place-self: center left;
+}
+
+.carousel-control.next {
+  place-self: center right;
+}
+
+.carousel-item {
+  width:100%;
+  height: auto;
+}
+
+.carousel-indicators {
+  bottom: -95px;
+}

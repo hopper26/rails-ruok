@@ -1,0 +1,67 @@
+.container-tracker h1 {
+  text-align: center;
+  padding: 30px;
+}
+
+#different_option_value_html {
+  text-align: center;
+  padding: 20px;
+  font-size:20px;
+  color: #838383;
+  border: 3px solid #759CC9;
+}
+
+#year {
+  text-align: right;
+  padding: 20px;
+  font-size:20px;
+  color: #838383;
+  border: 3px solid #759CC9;
+}
+
+.fa-face-smile {
+	font-size: 100px;
+	border-radius: 50%;
+	opacity: 0.9;
+	color: green;
+  padding-top: 20px;
+}
+
+.fa-face-meh {
+	font-size: 100px;
+  border-radius: 50%;
+	opacity: 0.9;
+	color:  orange;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+.fa-face-frown {
+	font-size: 100px;
+	border-radius: 50%;
+	opacity: 0.9;
+	color:  red;
+  padding-bottom: 10px;
+}
+
+.track-faces {
+  align-items: center;
+}
+
+.happy, .meh, .sad {
+  display: table-cell;
+  padding: 20px;
+}
+
+.month_input {
+  align-items: center;
+}
+
+.date-form {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.graphs {
+  text-align: center;
+}

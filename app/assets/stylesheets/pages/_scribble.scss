@@ -1,32 +1,49 @@
 #canvas {
-  border: 15px ridge grey;
-  margin: -10px auto;
+  border: 15px ridge #759CC9;
+  margin: 36px auto;
   cursor: url('paint.png'), auto;
   background: white;
   border-radius: 20px;
   position: relative;
-  left: 0;
+  left: 47;
   top: 0;
 }
 
-#wrapper {
+.container-scribble {
   width: 850px;
   margin: 0 auto;
   text-align: center;
-}
-
-#buttons {
-  // border: 5px solid blue;
-  width: 50px;
-  padding-top: 20px;
-}
-
-.container-scribble {
-  margin: 0;
   padding: 50px;
+}
+
+#color {
+  width: 50px;
+  height: 50px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: #838383;
+}
+
+#clear {
+  // border: 5px solid blue;
+  width: 160px;
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 30px;
+  text-align: center;
+  border: 2px solid black;
+  font-size: 35px;
+  color: #838383;
+  font-family: 'Neucha', cursive;
 }
 
 .titles {
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
+  font-size: 40px;
+}
+
+#clear:active {
+  background: #759CC9;
+  transition: ease 0.3s;
 }

@@ -55,9 +55,9 @@
 
 
   // saves image
-  document.getElementById('save').onclick = function () {
-    imageURL = canvas.toDataURL('image/png');
-    console.log(imageURL);
+  // document.getElementById('save').onclick = function () {
+  //   imageURL = canvas.toDataURL('image/png');
+  //   console.log(imageURL);
     // const file = dataURLtoBlob(imageURL);
     // const fd = new FormData();
     // fd.append("image", file);
@@ -69,24 +69,24 @@
     //   processData: false,
     //   contentType: false,
     // })
-  }
+
 
   //clear canvas
   document.getElementById('clear').onclick = function () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    document.getElementById('canvas').getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
   }
-
+}
   //loads it back
-  document.getElementById('load').onclick = function () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const myImage = new Image();
+  // document.getElementById('load').onclick = function () {
+  //   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  //   const myImage = new Image();
 
-    myImage.onload = function () {
-      ctx.drawImage(myImage,0,0);
-    }
-    myImage.src = imageURL;
-    // ctx.drawImage(myImage, 0, 0);p
-  }
+  //   myImage.onload = function () {
+  //     ctx.drawImage(myImage,0,0);
+  //   }
+  //   myImage.src = imageURL;
+  //   // ctx.drawImage(myImage, 0, 0);p
+  // }
 
 
 //   window.onload = function(){
@@ -129,6 +129,6 @@
   //   }
   //   return new Blob([new Uint8Array(array)], {type: 'image/png'})
   // }
-}
+
 
 export { initScribble }
