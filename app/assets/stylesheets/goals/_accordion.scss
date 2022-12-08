@@ -21,12 +21,8 @@ h5 {
   text-align: center;
 }
 
-.input-goal {
-  flex: auto;
-}
-
 #submit-button-id {
-  padding: 10px;
+  padding: 7px;
   border-radius: 10px;
   text-align: center;
   border: 1px solid black;
@@ -42,6 +38,26 @@ h5 {
 }
 
 .form-control {
-  border: 2px solid #759cc9;
+  border: 3px solid #759cc9;
+  background: #eeecf1;
+  color: black;
   border-radius: 10px;
+}
+
+.goalcat {
+  border: 3px solid #759cc9;
+  background: #eeecf1;
+  color: black;
+}
+
+.input-goal {
+  width: 100%;
+  display: inline-block;
+  // flex-direction: row;
+  // justify-content: center;
+}
+
+.goalbtn {
+  display: flex;
+  align-items: right;;
 }

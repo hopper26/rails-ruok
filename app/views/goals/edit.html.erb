@@ -1,11 +1,11 @@
-<%= render "shared/navbar" %>
-<h1>Edit The Goal</h1>
- <div id="<%= dom_id @goal %>">
-  <%# <%= render "form", goal: @goal %>
-  <%= form_with model: @goal do |f| %>
-    <%= f.select :section, options_for_select(["Self Care", "Accomplishments", "Enjoyment", "Activities"]), onchange: "$('#submit-button-id').click();", value: :section, class: "form-control" %>
-    <%= f.text_field :content, placeholder: "New Task", class: "form-control text-line"  %>
-    <%= f.submit "Change", id:"submit-button-id" %>
-  <% end %>
-  <%= link_to "Never Mind", goals_path %>
+<%= render "navbar4" %>
+  <div class="container-edit-goals">
+    <div id="<%= dom_id @goal %>">
+      <%# <%= render "form", goal: @goal %>
+      <%= form_with model: @goal do |f| %>
+        <%= f.select :section, options_for_select(["Self Care", "Accomplishments", "Enjoyment", "Activities"]), onchange: "$('#submit-button-id').click();", value: :section, class: "form-control" %>
+        <%= f.text_field :content, placeholder: "New Task", class: "form-control text-line"  %>
+        <%= f.submit "Change", id:"submit-button-id" %>
+      <% end %>
+    </div>
 </div>
