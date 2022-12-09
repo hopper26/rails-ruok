@@ -31,7 +31,7 @@ arrt = ["Today has been blah", "Not much has happened", "Will it ever stop", "Be
 
 # fake user
 user = User.new(
-  first_name: "Megan",
+  first_name: "Hayley",
   last_name: "Tottle",
   email: "mtottle@gmail.com",
   password: "password"
