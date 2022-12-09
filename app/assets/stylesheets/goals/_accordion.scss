@@ -26,22 +26,23 @@ h5 {
 }
 
 #submit-button-id {
-  padding: 7px;
   border-radius: 10px;
-  text-align: center;
-  border: 1px solid #759CC9;
+  width: 120px;
+  padding: 7px;
   font-size: 20px;
   color: #838383;
   font-family: 'Neucha', cursive;
-  box-shadow: 1px 1px 1px 1px #8FB1cc;
+  text-align: center;
+  box-shadow: 1px 2px 1px 2px #8FB1cc;
+  border: 2px solid #759CC9;
   margin-bottom: 40px;
   margin-top: 10px;
 }
 
-// #submit-button-id:active {
-//   background: #759CC9;
-//   transition: ease 0.3s;
-// }
+#submit-button-id:active {
+  background: #759CC9;
+  transition: ease 0.3s;
+}
 
 .form-control {
   border: 3px solid #759cc9;
