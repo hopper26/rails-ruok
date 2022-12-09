@@ -53,7 +53,7 @@ post = Post.new(
   rich_body: "It has been a very long week. Have barely slept. Can not stop thinking about all that I need to get done. Why does
   nothing ever work for me. One positive thing is I have nearly finished my course. Need to remember to book my ticket to Sydney",
   user: user,
-  created_at: "Thu, 08 Dec 2022 03:12:18 +1100"
+  created_at: "Fri, 09 Dec 2022 12:12:18 +1100"
 )
 post.save!
 
