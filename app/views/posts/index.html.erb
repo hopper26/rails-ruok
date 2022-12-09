@@ -16,7 +16,8 @@
     <%= link_to '<i class="fa-solid fa-plus add-entry"></i>'.html_safe, new_post_path(date: params[:date]) %>
   </div>
 
-  <div class="entry-area" style="height: 80vh;">
+  <div class="entry-area">
+  <%# style="height: 80vh;"> %>
     <% unless params[:date].empty? %>
       <% if @my_posts.empty? %>
         <p style="text-align: center;color: #759cc9;">No entries for that day</p>
