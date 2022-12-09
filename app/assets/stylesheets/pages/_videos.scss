@@ -29,3 +29,8 @@ iframe {
   width: auto;
   background-color: #759cc9;
 }
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(1);
+}
