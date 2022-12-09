@@ -15,7 +15,7 @@ Emotion.destroy_all
 arr1 = ["Take a shower", "Take 5 minutes to just do nothing", "Do the laundry", "Have a nap", "Eat something 'naughty'"]
 arr2 = ["Finish a course", "All Christmas presents brought", "Pay bills"]
 arr3 = ["Read a book", "Listen to new music", "Finish the paint by numbers"]
-arr4 = ["Go to the gym", "Play World of Warcraft", "Learn to knit", "Eat something 'naughty'"]
+arr4 = ["Go to the gym", "Play World of Warcraft", "Learn to knit", "Ticket for Sydney booked"]
 arrt = ["Today has been blah", "Not much has happened", "Will it ever stop", "Better day", "Sun is shining",
         "Today has been blah", "Not much has happened", "Will it ever stop", "Better day", "Sun is shining",
         "Today has been blah", "Not much has happened", "Will it ever stop", "Better day", "Sun is shining",
@@ -49,9 +49,8 @@ user.save
 end
 
 post = Post.new(
-  title: "So very tired",
-  rich_body: "It has been a very long week. Have barely slept. Can not stop thinking about all that I need to get done. Why does
-  nothing ever work for me. One positive thing is I have nearly finished my course. Need to remember to book my ticket to Sydney",
+  title: "It's been a long night",
+  rich_body: "What a night, did not manage to switch off at all. Staring at the four walls is incredibly boring. Time moves so slowly. Remembered at least to book my train ticket to Sydney - hopefully will be a bit of fun.",
   user: user,
   created_at: "Fri, 09 Dec 2022 12:12:18 +1100"
 )
