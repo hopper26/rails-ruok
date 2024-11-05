@@ -1,1 +1,5 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+A mental health app that was created as the final project of an intense web development programme run by Le Wagon Melbourne. 
+
+
+
+
